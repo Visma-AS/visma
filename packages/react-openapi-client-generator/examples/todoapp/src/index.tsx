@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'todomvc-app-css/index.css';
 import 'todomvc-common/base.css';
-import App, { basename } from './App';
+import App from './App';
+import { homepage } from '../package.json';
 
 async function main() {
   if (
@@ -12,8 +13,7 @@ async function main() {
     // process.env.REACT_APP_MOCK === 'msw'
   ) {
     if (
-      basename &&
-      window.location.pathname === basename &&
+      window.location.pathname === homepage &&
       !window.location.pathname.endsWith('/')
     ) {
       window.location.pathname = `${window.location.pathname}/`;
@@ -21,15 +21,11 @@ async function main() {
     }
 
     const { worker } = await import('./mocks/browser');
-    await worker.start(
-      basename
-        ? {
-            serviceWorker: {
-              url: `${basename}/mockServiceWorker.js`,
-            },
-          }
-        : undefined
-    );
+    await worker.start({
+      serviceWorker: {
+        url: `${homepage}/mockServiceWorker.js`,
+      },
+    });
   }
 
   ReactDOM.render(

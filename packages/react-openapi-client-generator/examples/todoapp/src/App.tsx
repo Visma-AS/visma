@@ -7,14 +7,13 @@ import List from './List';
 import ToggleAll from './ToggleAll';
 import { homepage } from '../package.json';
 
-export const basename =
-  process.env.NODE_ENV === 'development' ? undefined : homepage;
-
 function App() {
   return (
     <Suspense fallback="loading...">
       <Container>
-        <BrowserRouter basename={basename}>
+        <BrowserRouter
+          basename={process.env.NODE_ENV === 'test' ? undefined : homepage}
+        >
           <section className="todoapp">
             <header>
               <h1>todos</h1>

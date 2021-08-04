@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/visma/react-openapi-client-generator/examples/todoapp/static/css/main.e1b2a040.chunk.css",
+    "main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.c4c5ab59.chunk.js",
+    "main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.c4c5ab59.chunk.js.map",
+    "runtime-main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.d7febf65.js",
+    "runtime-main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.d7febf65.js.map",
+    "static/css/2.1dee6bec.chunk.css": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.1dee6bec.chunk.css",
+    "static/js/2.59915d4b.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.59915d4b.chunk.js",
+    "static/js/2.59915d4b.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.59915d4b.chunk.js.map",
+    "static/js/3.91f763bb.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.91f763bb.chunk.js",
+    "static/js/3.91f763bb.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.91f763bb.chunk.js.map",
+    "static/js/4.acd5d2e8.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.acd5d2e8.chunk.js",
+    "static/js/4.acd5d2e8.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.acd5d2e8.chunk.js.map",
+    "index.html": "/visma/react-openapi-client-generator/examples/todoapp/index.html",
+    "static/css/2.1dee6bec.chunk.css.map": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.1dee6bec.chunk.css.map",
+    "static/css/main.e1b2a040.chunk.css.map": "/visma/react-openapi-client-generator/examples/todoapp/static/css/main.e1b2a040.chunk.css.map",
+    "static/js/2.59915d4b.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.59915d4b.chunk.js.LICENSE.txt",
+    "static/js/3.91f763bb.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.91f763bb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d7febf65.js",
+    "static/css/2.1dee6bec.chunk.css",
+    "static/js/2.59915d4b.chunk.js",
+    "static/css/main.e1b2a040.chunk.css",
+    "static/js/main.c4c5ab59.chunk.js"
+  ]
+}

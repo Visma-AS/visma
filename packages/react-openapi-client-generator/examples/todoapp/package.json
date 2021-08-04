@@ -2,6 +2,7 @@
   "name": "todoapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/visma/react-openapi-client-generator/examples/todoapp",
   "scripts": {
     "generate-client": "react-openapi-client-generator src/TodoMVC-API.json src/client.ts",
     "prestart": "npm run generate-client",

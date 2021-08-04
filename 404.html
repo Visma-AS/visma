@@ -22,7 +22,13 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 1;
+
+      var paths = ['/react-openapi-client-generator/examples/todoapp'];
+
+      var path = paths.find((path) =>
+        window.location.pathname.startsWith(path)
+      );
+      var pathSegmentsToKeep = path ? path.split('/').length : 1;
 
       var l = window.location;
       l.replace(

@@ -18,7 +18,8 @@ jobs:
       - name: Check package version changes
         uses: EndBug/version-check@v1
         id: msw-openapi-backend-integration
-        file-name: packages/msw-openapi-backend-integration/package.json
+        with:
+          file-name: packages/msw-openapi-backend-integration/package.json
 
       - name: Set up Node.js
         if: steps['msw-openapi-backend-integration'].outputs.changed == 'true'
@@ -39,7 +40,8 @@ jobs:
       - name: Check package version changes
         uses: EndBug/version-check@v1
         id: react-openapi-client-generator
-        file-name: packages/react-openapi-client-generator/package.json
+        with:
+          file-name: packages/react-openapi-client-generator/package.json
 
       - name: Set up Node.js
         if: steps['react-openapi-client-generator'].outputs.changed == 'true'

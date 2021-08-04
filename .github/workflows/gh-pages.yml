@@ -26,11 +26,11 @@ jobs:
           npm ci
           cd packages/react-openapi-client-generator/examples/todoapp
           npm run build
-          mkdir -p ../../../../build/react-openapi-client-generator/examples/todoapp
+          mkdir -p ../../../../public/react-openapi-client-generator/examples/todoapp
           mv build/* $_
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: build
+          folder: public

@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "packages/*/examples/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspace=packages"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}

@@ -15,21 +15,21 @@ jobs:
         with:
           ref: ${{ github.event.release.target_commitish }}
 
-      - name: Check package version changes
-        uses: EndBug/version-check@v1
-        id: msw-openapi-backend-integration
-        with:
-          file-name: packages/msw-openapi-backend-integration/package.json
+      #- name: Check package version changes
+      #  uses: EndBug/version-check@v1
+      #  id: msw-openapi-backend-integration
+      #  with:
+      #    file-name: packages/msw-openapi-backend-integration/package.json
 
       - name: Set up Node.js
-        if: steps['msw-openapi-backend-integration'].outputs.changed == 'true'
+        #if: steps['msw-openapi-backend-integration'].outputs.changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
 
       - name: Clean install dependencies, build and publish
-        if: steps['msw-openapi-backend-integration'].outputs.changed == 'true'
+        #if: steps['msw-openapi-backend-integration'].outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
@@ -37,21 +37,21 @@ jobs:
           cd packages/msw-openapi-backend-integration
           npm publish
 
-      - name: Check package version changes
-        uses: EndBug/version-check@v1
-        id: react-openapi-client-generator
-        with:
-          file-name: packages/react-openapi-client-generator/package.json
+      #- name: Check package version changes
+      #  uses: EndBug/version-check@v1
+      #  id: react-openapi-client-generator
+      #  with:
+      #    file-name: packages/react-openapi-client-generator/package.json
 
       - name: Set up Node.js
-        if: steps['react-openapi-client-generator'].outputs.changed == 'true'
+        #if: steps['react-openapi-client-generator'].outputs.changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
 
       - name: Clean install dependencies, build and publish
-        if: steps['react-openapi-client-generator'].outputs.changed == 'true'
+        #if: steps['react-openapi-client-generator'].outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |

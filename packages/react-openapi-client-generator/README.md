@@ -2,7 +2,7 @@
 
 Generate typed hooks and methods for React app from OpenAPI schema.
 
-[TodoMVC example](https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator/examples/todoapp)
+[TodoMVC example](https://visma-as.github.io/visma/react-openapi-client-generator/examples/todoapp/)
 
 ## Setup in Create React App
 

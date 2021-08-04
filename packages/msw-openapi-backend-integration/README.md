@@ -2,7 +2,7 @@
 
 Helper to integrate Mock Service Worker with OpenAPI Backend.
 
-[TodoMVC example](https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator/examples/todoapp)
+[TodoMVC example](https://visma-as.github.io/visma/react-openapi-client-generator/examples/todoapp/)
 
 ## Setup in Create React App
 

@@ -7,7 +7,7 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "prepare": "npm run prepare --workspace=packages",
+    "build": "npm run build --workspace=packages",
     "test": "npm test --workspace=packages"
   },
   "devDependencies": {

@@ -1,9 +1,15 @@
 name: Test, deploy pages, publish packages
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  install:
+  install_build_test:
     name: Clean install dependencies, build, test
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +25,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - run: npm ci
+      - run: npm run build
       - run: npm test
 
       - uses: actions/upload-artifact@v2
@@ -26,11 +33,10 @@ jobs:
           name: cwd
           path: .
 
-  public_pages:
-    needs: install
+  move_files_to_public_pages:
+    needs: install_build_test
     name: Move files to /public
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
         path:
@@ -46,10 +52,10 @@ jobs:
       - run: mv ${{ matrix.path.from }}/* $_
 
   deploy:
-    needs: public_pages
+    needs: move_files_to_public_pages
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push'
     steps:
       - uses: actions/download-artifact@v2
         with:
@@ -62,10 +68,10 @@ jobs:
           folder: public
 
   publish:
-    needs: install
+    needs: install_build_test
     name: Publish to npm if version change
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push'
     strategy:
       matrix:
         package:

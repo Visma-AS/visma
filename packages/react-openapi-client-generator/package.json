@@ -21,7 +21,7 @@
     "examples/*"
   ],
   "scripts": {
-    "prepare": "npm run prepare --workspaces",
+    "build": "npm run build --workspaces",
     "test": "npm test --workspaces"
   },
   "dependencies": {

@@ -26,7 +26,7 @@ jobs:
           name: cwd
           path: .
 
-  collect public pages:
+  public_pages:
     needs: install
     name: Move files to /public
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
       - run: mv ${{ matrix.path.from }}/* $_
 
   deploy:
-    needs: collect public pages
+    needs: public_pages
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'

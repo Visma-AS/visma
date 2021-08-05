@@ -7,7 +7,8 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "test": "npm run test --workspace=packages"
+    "prepare": "npm run prepare --workspace=packages",
+    "test": "npm test --workspace=packages"
   },
   "devDependencies": {
     "prettier": "^2.3.2"

@@ -1,0 +1,97 @@
+name: Test, deploy pages, publish packages
+
+on: push
+
+jobs:
+  install:
+    name: Clean install dependencies, build, test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+      - run: npm test
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: cwd
+          path: .
+
+  collect public pages:
+    needs: install
+    name: Move files to /public
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    strategy:
+      matrix:
+        path:
+          - from: packages/react-openapi-client-generator/examples/todoapp/build
+            to: react-openapi-client-generator/examples/todoapp
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: cwd
+          path: .
+
+      - run: mkdir -p public/${{ matrix.path.to }}
+      - run: mv ${{ matrix.path.from }}/* $_
+
+  deploy:
+    needs: collect public pages
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: cwd
+          path: .
+
+      - uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: public
+
+  publish:
+    needs: install
+    name: Publish to npm if version change
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && steps.${{ matrix.package }}.outputs.changed == 'true'
+    strategy:
+      matrix:
+        package:
+          - msw-openapi-backend-integration
+          - react-openapi-client-generator
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: cwd
+          path: .
+
+      - name: Check package version changes
+        uses: EndBug/version-check@v1
+        id: ${{ matrix.package }}
+        with:
+          file-name: packages/${{ matrix.package }}/package.json
+
+      - run: cd packages/${{ matrix.package }}
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish

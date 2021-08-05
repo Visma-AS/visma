@@ -21,7 +21,8 @@
     "examples/*"
   ],
   "scripts": {
-    "test": "npm run test --workspaces"
+    "prepare": "npm run prepare --workspaces",
+    "test": "npm test --workspaces"
   },
   "dependencies": {
     "@postinumero/use-async": "^0.1.4",

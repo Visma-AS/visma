@@ -18,7 +18,8 @@
     "lib"
   ],
   "scripts": {
-    "test": "echo 'Error: no test specified'"
+    "prepare": "echo 'No prepare specified'",
+    "test": "echo 'No test specified'"
   },
   "dependencies": {
     "msw": "^0.33.2",

@@ -10,8 +10,18 @@ Generate typed hooks and methods for React app from OpenAPI schema.
 2. Add API schema JSON, e.g. `src/petstore.json` ([examples](https://github.com/OAI/OpenAPI-Specification/blob/main/examples))
 3. Add scripts to `package.json`:
 
+JavaScript:
+
 ```
-"generate-client": "react-openapi-client-generator src/petstore.json src/client.ts",
+"generate-client": "react-openapi-client-generator src/petstore.json src/client.js",
+"prestart": "npm run generate-client",
+"prebuild": "npm run generate-client",
+```
+
+TypeScript:
+
+```
+"generate-client": "react-openapi-client-generator src/petstore.json src/client.js",
 "prestart": "npm run generate-client",
 "prebuild": "npm run generate-client",
 ```
@@ -22,8 +32,6 @@ Generate typed hooks and methods for React app from OpenAPI schema.
 ## Hooks for data fetching
 
 Each `GET` operation is available as a hook. Hooks return the response data directly. **This is the main approach to fetch data for rendering**. Requests are memoized, so it is fine to call the hooks in any component, right where the data is needed.
-
-**Example:**
 
 ```js
 import { useItems } from './client';

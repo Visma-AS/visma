@@ -65,7 +65,7 @@ jobs:
     needs: install
     name: Publish to npm if version change
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && steps.${{ matrix.package }}.outputs.changed == 'true'
+    if: github.ref == 'refs/heads/main' && steps['${{ matrix.package }}'].outputs.changed == 'true'
     strategy:
       matrix:
         package:

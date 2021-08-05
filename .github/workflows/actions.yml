@@ -79,19 +79,19 @@ jobs:
 
       - name: Check package version changes
         uses: EndBug/version-check@v1
-        id: ${{ matrix.package }}
+        id: check
         with:
           file-name: packages/${{ matrix.package }}/package.json
 
       - name: Set up Node.js
-        if: steps.${{ matrix.package }}.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
 
       - name: Publish
-        if: steps.${{ matrix.package }}.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |

@@ -65,19 +65,13 @@ jobs:
     needs: install
     name: Publish to npm if version change
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && steps['${{ matrix.package }}'].outputs.changed == 'true'
+    if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
         package:
           - msw-openapi-backend-integration
           - react-openapi-client-generator
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org
-
       - uses: actions/download-artifact@v2
         with:
           name: cwd
@@ -89,9 +83,17 @@ jobs:
         with:
           file-name: packages/${{ matrix.package }}/package.json
 
-      - run: cd packages/${{ matrix.package }}
+      - name: Set up Node.js
+        if: steps.${{ matrix.package }}.outputs.changed == 'true'
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
 
       - name: Publish
+        if: steps.${{ matrix.package }}.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
+        run: |
+          cd packages/${{ matrix.package }}
+          npm publish

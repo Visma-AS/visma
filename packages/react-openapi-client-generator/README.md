@@ -21,7 +21,7 @@ JavaScript:
 TypeScript:
 
 ```
-"generate-client": "react-openapi-client-generator src/petstore.json src/client.js",
+"generate-client": "react-openapi-client-generator src/petstore.json src/client.ts",
 "prestart": "npm run generate-client",
 "prebuild": "npm run generate-client",
 ```

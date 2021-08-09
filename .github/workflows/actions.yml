@@ -39,7 +39,23 @@ jobs:
 
   create_deployment:
     needs: install_build_test
-    name: Move files to /public
+    name: Create deploy artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: .
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: .
+          retention-days: 0.05
+
+  add_deployment:
+    needs: create_deployment
+    name: Add files to /public
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -49,13 +65,8 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: build
-          path: .
-
-      - uses: actions/download-artifact@v2
-        with:
           name: public
-          path: public
+          path: .
 
       - run: mkdir -p public/${{ matrix.path.to }}
       - run: mv ${{ matrix.path.from }}/* public/${{ matrix.path.to }}
@@ -63,11 +74,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: public
-          path: public
+          path: .
           retention-days: 0.05
 
   deploy:
-    needs: create_deployment
+    needs: add_deployment
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     if: github.event_name == 'push'

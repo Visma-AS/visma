@@ -53,7 +53,7 @@ jobs:
           path: .
 
       - run: mkdir -p public/${{ matrix.path.to }}
-      - run: mv ${{ matrix.path.from }}/* $_
+      - run: mv ${{ matrix.path.from }}/* public/${{ matrix.path.to }}
 
   deploy:
     needs: move_files_to_public_pages

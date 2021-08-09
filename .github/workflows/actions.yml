@@ -37,7 +37,7 @@ jobs:
             !**/src
           retention-days: 0.05
 
-  move_files_to_public_pages:
+  create_deployment:
     needs: install_build_test
     name: Move files to /public
     runs-on: ubuntu-latest
@@ -52,19 +52,30 @@ jobs:
           name: build
           path: .
 
+      - uses: actions/download-artifact@v2
+        with:
+          name: public
+          path: public
+
       - run: mkdir -p public/${{ matrix.path.to }}
       - run: mv ${{ matrix.path.from }}/* public/${{ matrix.path.to }}
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: public
+          retention-days: 0.05
+
   deploy:
-    needs: move_files_to_public_pages
+    needs: create_deployment
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: build
-          path: .
+          name: public
+          path: public
 
       - uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

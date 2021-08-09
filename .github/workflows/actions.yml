@@ -30,8 +30,12 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: cwd
-          path: .
+          name: build
+          path: |
+            .
+            !**/node_modules
+            !**/src
+          retention-days: 0.05
 
   move_files_to_public_pages:
     needs: install_build_test
@@ -45,7 +49,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: cwd
+          name: build
           path: .
 
       - run: mkdir -p public/${{ matrix.path.to }}
@@ -59,7 +63,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: cwd
+          name: build
           path: .
 
       - uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -80,7 +84,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: cwd
+          name: build
           path: .
 
       - name: Check package version changes

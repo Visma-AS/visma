@@ -4,7 +4,8 @@ import { OpenAPIClientAxios } from 'openapi-client-axios';
 import { basename, dirname, extname, relative } from 'path';
 import { writeFile } from 'fs/promises';
 import { generateTypesForDocument } from 'openapi-client-axios-typegen';
-import tss from 'typescript';
+import ts from 'typescript';
+import slash from 'slash';
 
 const mapToString = (array, fn) => array.map(fn).join('\n');
 
@@ -45,7 +46,7 @@ import OpenAPIClientAxios from 'openapi-client-axios';
 import { create } from '@postinumero/use-async';
 import definition from '${[
   '.',
-  relative(dirname(target), dirname(definition)),
+  slash(relative(dirname(target), dirname(definition))),
   basename(definition),
 ]
   .filter(Boolean)
@@ -131,10 +132,10 @@ await writeFile(
   target,
   isTypeScript
     ? content
-    : tss.transpileModule(content, {
+    : ts.transpileModule(content, {
         compilerOptions: {
-          target: tss.ScriptTarget.Latest,
-          module: tss.ModuleKind.ESNext,
+          target: ts.ScriptTarget.Latest,
+          module: ts.ModuleKind.ESNext,
         },
       }).outputText
 );

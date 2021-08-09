@@ -28,7 +28,8 @@
     "@postinumero/use-async": "^0.1.4",
     "axios": "^0.21.1",
     "openapi-client-axios": "^4.0.0",
-    "openapi-client-axios-typegen": "^3.14.1"
+    "openapi-client-axios-typegen": "^3.14.1",
+    "slash": "^4.0.0"
   },
   "devDependencies": {
     "lodash-es": "^4.17.21"

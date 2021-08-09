@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-openapi-client-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate typed hooks and methods for React app from OpenAPI schema.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator",
   "repository": {

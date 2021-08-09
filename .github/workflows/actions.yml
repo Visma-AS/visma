@@ -114,6 +114,7 @@ jobs:
         id: check
         with:
           file-name: packages/${{ matrix.package }}/package.json
+          diff-search: true
 
       - name: Set up Node.js
         if: steps.check.outputs.changed == 'true'

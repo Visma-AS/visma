@@ -1,4 +1,4 @@
-# 0.1.1
+# 0.1.2
 
 - Fix generated `definition` import path on Windows
 

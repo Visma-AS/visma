@@ -11,10 +11,6 @@ const items: Components.Schemas.Items =
 
 const requestLogicHandlers: RequestLogicHandlers = {
   postItem(request) {
-    const items =
-      definition.paths['/items'].get.responses['200'].content[
-        'application/json'
-      ].examples['example-1'].value;
     items.push({
       ...(request.body as object),
       timestamp: Date.now(),

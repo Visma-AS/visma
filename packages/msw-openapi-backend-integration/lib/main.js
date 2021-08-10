@@ -8,7 +8,11 @@ export function handlers(options, requestLogicHandlers = {}) {
   api.register('notImplemented', (c, res, ctx, x) => {
     const requestLogicHandler = requestLogicHandlers[c.operation.operationId];
     if (requestLogicHandler) {
-      requestLogicHandler(c.request);
+      const response = requestLogicHandler(c.request);
+      if (response) {
+        const { status, mock } = response;
+        return res(ctx.status(status), ctx.json(mock));
+      }
     }
     const { status, mock } = c.api.mockResponseForOperation(
       c.operation.operationId

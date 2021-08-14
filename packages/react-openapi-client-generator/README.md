@@ -69,7 +69,7 @@ See `openapi-client-axios` documentation for [Parameters](https://www.npmjs.com/
 
 ### How to call hooks conditionally?
 
-You don't. Instead create a new component and render components conditionally. For example create `<Search>` component for `<input>` and `query` state. Render `<SearchResults query={query} />` only when the `query` is available. The hook can be called unconditionally in `SearchResults`.
+It is not allowed by the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html#only-call-hooks-at-the-top-level). Instead create a new component and render components conditionally. For example create `<Search>` component for `<input>` and `query` state. Render `<SearchResults query={query} />` only when the `query` is available. The hook can be called unconditionally in `SearchResults`.
 
 ### What if the request fails?
 

@@ -53,7 +53,7 @@ export * from './client';
 
 export async function postItem(item) {
   await client.postItem(null, item);
-  // Trigger reteching GET /items and rerendering components using
+  // Trigger refetching GET /items and rerendering components using
   // `useItems()`.
   // Does nothing, if there are no components mounted using `useItems()`.
   await client.refetchItems();

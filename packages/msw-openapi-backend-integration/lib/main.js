@@ -1,8 +1,13 @@
 import { rest } from 'msw';
 import OpenAPIBackend from 'openapi-backend';
 
+const _OpenAPIBackend =
+  OpenAPIBackend && OpenAPIBackend.__esModule
+    ? OpenAPIBackend['default']
+    : OpenAPIBackend;
+
 export function handlers(options, requestLogicHandlers = {}) {
-  const api = new OpenAPIBackend(options);
+  const api = new _OpenAPIBackend(options);
   api.register('notFound', (c, res, ctx) => res(ctx.status(404)));
 
   api.register('notImplemented', (c, res, ctx, x) => {

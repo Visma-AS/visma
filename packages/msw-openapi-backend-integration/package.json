@@ -1,6 +1,6 @@
 {
   "name": "@visma/msw-openapi-backend-integration",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Helper to integrate Mock Service Worker with OpenAPI Backend.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/msw-openapi-backend-integration",
   "repository": {
@@ -12,6 +12,7 @@
     "name": "Arno Saine",
     "email": "arno.saine@visma.com"
   },
+  "type": "module",
   "main": "lib/main.js",
   "files": [
     "index.d.ts",

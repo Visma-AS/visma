@@ -8,9 +8,21 @@
   ],
   "scripts": {
     "build": "npm run build --workspace=packages",
-    "test": "npm test --workspace=packages"
+    "test": "npm test --workspace=packages",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "**/package.json": "sort-package-json"
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "sort-package-json": "^1.50.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   }
 }

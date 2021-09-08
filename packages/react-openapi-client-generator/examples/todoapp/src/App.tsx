@@ -1,19 +1,17 @@
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { homepage } from '../package.json';
 import Container from './Container';
 import Footer from './Footer';
 import Input from './Input';
 import List from './List';
 import ToggleAll from './ToggleAll';
-import { homepage } from '../package.json';
 
-function App() {
+function App({ Router = BrowserRouter }) {
   return (
-    <Suspense fallback="loading...">
-      <Container>
-        <BrowserRouter
-          basename={process.env.NODE_ENV === 'test' ? undefined : homepage}
-        >
+    <Router basename={process.env.NODE_ENV === 'test' ? undefined : homepage}>
+      <Suspense fallback="loading...">
+        <Container>
           <section className="todoapp">
             <header>
               <h1>todos</h1>
@@ -25,9 +23,9 @@ function App() {
               <Footer />
             </section>
           </section>
-        </BrowserRouter>
-      </Container>
-    </Suspense>
+        </Container>
+      </Suspense>
+    </Router>
   );
 }
 

@@ -95,7 +95,9 @@ ${mapToString(
     `use-${operationIdWithoutGetPrefix}-raw`
   )}, ${camelCase(`refetch-${operationIdWithoutGetPrefix}`)}, ${camelCase(
     `use-${operationIdWithoutGetPrefix}-raw-safe`
-  )}] = create(${camelCase(`${variableName}-raw`)});
+  )}] = create(${camelCase(
+    `${variableName}-raw`
+  )}, { id: 'react-openapi-client-generator-${variableName}' });
 `
 )}
 ${mapToString(

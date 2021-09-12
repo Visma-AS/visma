@@ -1,3 +1,7 @@
+# 0.1.4
+
+- Add server-side rendering
+
 # 0.1.3
 
 - Add missing dependencies

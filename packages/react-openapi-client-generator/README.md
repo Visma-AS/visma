@@ -65,6 +65,10 @@ export async function postItem(item) {
 
 See `openapi-client-axios` documentation for [Parameters](https://www.npmjs.com/package/openapi-client-axios#parameters).
 
+## Server-side Rendering
+
+See https://www.npmjs.com/package/@postinumero/use-async#server-side-rendering.
+
 ## FAQ
 
 ### How to call hooks conditionally?

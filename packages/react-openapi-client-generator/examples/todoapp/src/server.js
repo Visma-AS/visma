@@ -1,4 +1,4 @@
-import { CacheContext } from '@postinumero/use-async/mjs/cache';
+import { ssrData } from '@postinumero/use-async';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
@@ -21,11 +21,7 @@ async function handleRender(req, res) {
     return <StaticRouter location={req.url} {...props} />;
   }
 
-  const element = (
-    <CacheContext.Provider value={new WeakMap()}>
-      <App Router={Router} />
-    </CacheContext.Provider>
-  );
+  const element = <App Router={Router} />;
 
   await ssrPrepass(element);
   const app = ReactDOMServer.renderToString(element);
@@ -38,7 +34,17 @@ async function handleRender(req, res) {
     }
 
     return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+      data.replace(
+        '<div id="root"></div>',
+        `<script>${ssrData(([error, response]) => [
+          error,
+          response && {
+            data: response.data,
+            headers: response.headers,
+            status: response.status,
+          },
+        ])}</script><div id="root">${app}</div>`
+      )
     );
   });
 }

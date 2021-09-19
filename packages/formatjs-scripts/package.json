@@ -1,0 +1,36 @@
+{
+  "name": "@visma/formatjs-scripts",
+  "version": "0.1.0",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/*": "./lib/*",
+    "./*": "./lib/*.js"
+  },
+  "bin": "./scripts/main.js",
+  "files": [
+    "lib",
+    "scripts"
+  ],
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@formatjs/cli": "^4.2.33",
+    "@visma/react-app-locale-utils": "^0.1.0",
+    "dotenv": "^10.0.0",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0"
+  },
+  "devDependencies": {
+    "@visma/tsconfig": "^0.1.0",
+    "typescript": "^4.4.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

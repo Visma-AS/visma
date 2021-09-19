@@ -101,6 +101,7 @@ jobs:
     strategy:
       matrix:
         package:
+          - formatjs-scripts
           - msw-openapi-backend-integration
           - react-app-locale-utils
           - react-openapi-client-generator

@@ -1,0 +1,6 @@
+{
+  "extends": "@visma/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib"
+  }
+}

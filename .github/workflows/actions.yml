@@ -102,7 +102,9 @@ jobs:
       matrix:
         package:
           - msw-openapi-backend-integration
+          - react-app-locale-utils
           - react-openapi-client-generator
+          - tsconfig
     steps:
       - uses: actions/download-artifact@v2
         with:

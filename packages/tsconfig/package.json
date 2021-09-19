@@ -1,0 +1,10 @@
+{
+  "name": "@visma/tsconfig",
+  "version": "0.1.0",
+  "license": "ISC",
+  "main": "./tsconfig.json",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

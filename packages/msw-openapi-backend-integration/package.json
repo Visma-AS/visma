@@ -18,10 +18,6 @@
     "index.d.ts",
     "lib"
   ],
-  "scripts": {
-    "build": "echo 'No build specified'",
-    "test": "echo 'No test specified'"
-  },
   "dependencies": {
     "msw": "^0.33.2",
     "openapi-backend": "^4.1.0"

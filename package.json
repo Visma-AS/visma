@@ -7,8 +7,8 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace=packages",
-    "test": "npm test --workspace=packages",
+    "build": "npm run build --workspace=packages --if-present",
+    "test": "npm test --workspace=packages --if-present",
     "prepare": "husky install"
   },
   "lint-staged": {

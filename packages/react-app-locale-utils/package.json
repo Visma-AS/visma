@@ -1,0 +1,33 @@
+{
+  "name": "@visma/react-app-locale-utils",
+  "version": "0.1.0",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/*": "./lib/*",
+    "./*": "./lib/*.js"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@mui/material": "^5.0.0",
+    "@postinumero/storage": "^0.3.0",
+    "@postinumero/use-async": "^0.3.0"
+  },
+  "devDependencies": {
+    "@visma/tsconfig": "^0.1.0",
+    "typescript": "^4.4.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

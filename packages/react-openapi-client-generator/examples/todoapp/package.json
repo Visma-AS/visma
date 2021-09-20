@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "build:server": "webpack --config webpack.config.server.mjs --mode production",
     "build:ssr": "npm-run-all build build:server",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"<rootDir>/node_modules/(?!@postinumero/use-async)/\"",
     "eject": "react-scripts eject"
   },
   "browserslist": {

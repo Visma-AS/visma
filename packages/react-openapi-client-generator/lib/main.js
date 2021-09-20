@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+import { writeFile } from 'fs/promises';
 import { camelCase } from 'lodash-es';
 import { OpenAPIClientAxios } from 'openapi-client-axios';
-import { basename, dirname, extname, relative } from 'path';
-import { writeFile } from 'fs/promises';
 import { generateTypesForDocument } from 'openapi-client-axios-typegen';
-import ts from 'typescript';
+import { basename, dirname, extname, relative } from 'path';
 import slash from 'slash';
+import ts from 'typescript';
 
 const mapToString = (array, fn) => array.map(fn).join('\n');
 
@@ -73,7 +73,7 @@ ${mapToString(
     )}(...args: FunctionParameters<OperationMethods['${operationId}']>) {
   const client = await clientPromise;
   return await client['${operationId}'](...args);
-};
+}
 `
 )}
 ${mapToString(
@@ -82,7 +82,7 @@ ${mapToString(
     `export async function ${variableName}(...args: FunctionParameters<OperationMethods['${operationId}']>) {
   const response = await ${camelCase(`${variableName}-raw`)}(...args);
   return response.data;
-};
+}
 `
 )}
 ${mapToString(

@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-openapi-client-generator",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generate typed hooks and methods for React app from OpenAPI schema.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator",
   "repository": {
@@ -25,7 +25,7 @@
     "test": "npm test --workspaces"
   },
   "dependencies": {
-    "@postinumero/use-async": "^0.2.0",
+    "@postinumero/use-async": "^0.3.1",
     "axios": "^0.21.1",
     "lodash-es": "^4.17.21",
     "openapi-client-axios": "^4.0.0",

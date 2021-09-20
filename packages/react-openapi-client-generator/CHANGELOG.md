@@ -1,3 +1,8 @@
+# 0.1.5
+
+- Upgrade to `@postinumero/use-async@0.3.1`
+- Fix generated code styling
+
 # 0.1.4
 
 - Add server-side rendering

@@ -104,6 +104,7 @@ jobs:
           - formatjs-scripts
           - msw-openapi-backend-integration
           - react-app-locale-utils
+          - react-keycloak
           - react-openapi-client-generator
           - tsconfig
     steps:

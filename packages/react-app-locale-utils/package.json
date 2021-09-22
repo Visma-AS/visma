@@ -1,7 +1,16 @@
 {
   "name": "@visma/react-app-locale-utils",
   "version": "0.1.0",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-locale-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
   "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
   "type": "module",
   "exports": {
     ".": "./lib/index.js",

@@ -1,7 +1,16 @@
 {
   "name": "@visma/tsconfig",
   "version": "0.1.0",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/tsconfig",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
   "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
   "main": "./tsconfig.json",
   "publishConfig": {
     "access": "public",

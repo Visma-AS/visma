@@ -1,6 +1,11 @@
 {
   "name": "@visma/react-keycloak",
   "version": "0.1.0",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-keycloak",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
   "license": "ISC",
   "author": {
     "name": "Arno Saine",

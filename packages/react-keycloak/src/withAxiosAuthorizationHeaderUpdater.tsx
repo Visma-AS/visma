@@ -1,16 +1,22 @@
 import type { AxiosStatic } from 'axios';
+import axios from 'axios';
 import React, { ReactNode, useState } from 'react';
 import type { Props, Provider } from './index.js';
 
 interface PropsWithAxios extends Props {
-  axios: AxiosStatic | Promise<AxiosStatic>;
+  axios?: AxiosStatic | Promise<AxiosStatic>;
 }
 
 export default function withAxiosAuthorizationHeaderUpdater(
   Provider: Provider
 ) {
   return function ReactKeycloakProvider(props: PropsWithAxios) {
-    const { authClient, onTokens, axios: axiosPromise, ...other } = props;
+    const {
+      authClient,
+      onTokens,
+      axios: axiosPromise = axios,
+      ...other
+    } = props;
     const [initialized, setInitialized] = useState(false);
 
     return (

@@ -12,6 +12,8 @@ const user = useCurrentUser();
 
 ### `HasRole`
 
+`fallback` and `children` props are optional.
+
 ```js
 import { HasRole } from '@visma/react-keycloak';
 
@@ -20,7 +22,27 @@ import { HasRole } from '@visma/react-keycloak';
 </HasRole>;
 ```
 
+```js
+<HasRole realm={['foo', 'bar']}>...</HasRole>
+```
+
+```js
+<HasRole resource={{ 'my-app': 'editor' }} /* fallback={<Unauthorized />} */>
+  <EditButton />
+</HasRole>
+```
+
+Shorthand to check for realm and current `clientId` resource roles:
+
+```js
+<HasRole admin>
+  <AdminPanel />
+</HasRole>
+```
+
 ### `IsAuthenticated`
+
+`fallback` and `children` props are optional.
 
 ```js
 import { IsAuthenticated } from '@visma/react-keycloak';
@@ -30,18 +52,16 @@ import { IsAuthenticated } from '@visma/react-keycloak';
 </IsAuthenticated>;
 ```
 
-```js
-<HasRole resource={{ 'my-app': 'editor' }} /* fallback={<Unauthorized />} */>
-  <EditButton />
-</HasRole>
-```
-
 ### `useHasRole`
 
 ```js
 import { useHasRole } from '@visma/react-keycloak';
 
 const isAdmin = useHasRole({ realm: 'admin' });
+```
+
+```js
+const isFooOrBar = useHasRole({ realm: ['foo', 'bar'] });
 ```
 
 ```js
@@ -54,6 +74,13 @@ const isEditor = useHasRole({ resource: { 'my-app': 'editor' } });
 
 ```js
 const useIsEditor = () => useHasRole({ resource: { 'my-app': 'editor' } });
+```
+
+Shorthand to check for realm and current `clientId` resource roles:
+
+```js
+const isAdmin = useHasRole('admin');
+const isFooOrBar = useHasRole(['foo', 'bar']);
 ```
 
 ### `useIsAuthenticated`
@@ -107,8 +134,10 @@ import axios from 'axios';
 const ReactKeycloakProvider = withAxiosAuthorizationHeaderUpdater(Provider);
 
 <ReactKeycloakProvider
-  authClient={keycloak}
-  axios={axios /* AxiosStatic | Promise<AxiosStatic> */}
+  axios={
+    axios /* AxiosStatic | Promise<AxiosStatic>, default: global axios instance */
+  }
+  /* … */
 >
   ...
 </ReactKeycloakProvider>;

@@ -101,9 +101,12 @@ jobs:
     strategy:
       matrix:
         package:
+          - babel-preset-formatjs
+          - craco-plugin-super-template
           - formatjs-scripts
           - msw-openapi-backend-integration
           - react-app-locale-utils
+          - react-intl-bundled-messages
           - react-keycloak
           - react-openapi-client-generator
           - tsconfig

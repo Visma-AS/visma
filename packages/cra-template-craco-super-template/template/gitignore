@@ -24,7 +24,7 @@ yarn-error.log*
 
 # translations
 # Messages for the default language are in the source code. Update the code instead of this file.
-/lang/fi-FI.json
+/lang/en-US.json
 /.compiled-lang
 
 # generated

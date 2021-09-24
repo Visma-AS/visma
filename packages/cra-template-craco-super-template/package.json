@@ -1,0 +1,30 @@
+{
+  "name": "@visma/cra-template-craco-super-template",
+  "version": "0.1.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template"
+  ],
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/cra-template-craco-super-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

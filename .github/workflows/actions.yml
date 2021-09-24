@@ -102,10 +102,12 @@ jobs:
       matrix:
         package:
           - babel-preset-formatjs
+          - cra-template-craco-super-template
           - craco-plugin-super-template
           - formatjs-scripts
           - msw-openapi-backend-integration
           - react-app-locale-utils
+          - react-app-super-template
           - react-intl-bundled-messages
           - react-keycloak
           - react-openapi-client-generator

@@ -1,0 +1,24 @@
+[
+  {
+    "keycloak": {
+      "clientId": "browser",
+      "realm": "super-template-dev",
+      "url": "https://idm.example.com/auth"
+    }
+  },
+  [
+    "example.com",
+    {
+      "backend": { "baseURL": "https://api.example.com" },
+      "keycloak": {
+        "realm": "super-template"
+      }
+    }
+  ],
+  [
+    "test.example.com",
+    {
+      "backend": { "baseURL": "https://api.test.example.com" }
+    }
+  ]
+]

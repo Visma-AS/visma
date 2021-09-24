@@ -7,7 +7,7 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "prebuild": "npm run build --workspace=packages/react-app-locale-utils",
+    "prebuild": "npm run build --workspace=packages/react-app-locale-utils --workspace=packages/react-keycloak --workspace=packages/react-intl-bundled-messages",
     "build": "npm run build --workspace=packages --if-present",
     "test": "npm test --workspace=packages --if-present",
     "prepare": "husky install"

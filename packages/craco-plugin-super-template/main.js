@@ -10,6 +10,9 @@ const plugin = {
           alias: {
             // Enable imports from `.compiled-lang/fi-FI.json` etc.
             [target]: path.resolve(`./${target}`),
+
+            'public.config': path.resolve('./public.config'),
+
             // https://formatjs.io/docs/guides/advanced-usage/#react-intl-without-parser-40-smaller
             ...(env === 'production' && {
               '@formatjs/icu-messageformat-parser':

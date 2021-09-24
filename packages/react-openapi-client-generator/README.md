@@ -10,24 +10,31 @@ Generate typed hooks and methods for React app from OpenAPI schema.
 2. Add API schema JSON, e.g. `src/petstore.json` ([examples](https://github.com/OAI/OpenAPI-Specification/blob/main/examples))
 3. Add scripts to `package.json`:
 
-JavaScript:
+   JavaScript:
 
-```
-"generate-client": "react-openapi-client-generator src/petstore.json src/client.js",
-"prestart": "npm run generate-client",
-"prebuild": "npm run generate-client",
-```
+   ```
+   "generate-client": "react-openapi-client-generator src/petstore.json src/client.js",
+   "prestart": "npm run generate-client",
+   "prebuild": "npm run generate-client",
+   ```
 
-TypeScript:
+   TypeScript:
 
-```
-"generate-client": "react-openapi-client-generator src/petstore.json src/client.ts",
-"prestart": "npm run generate-client",
-"prebuild": "npm run generate-client",
-```
+   ```
+   "generate-client": "react-openapi-client-generator src/petstore.json src/client.ts",
+   "prestart": "npm run generate-client",
+   "prebuild": "npm run generate-client",
+   ```
 
-4. Use `<Suspense>` to show a loading indicator(s)
-5. Use Error Boundary to handle errors
+4. Add `.gitignore`
+
+   ```sh
+   # generated
+   /src/client.js
+   ```
+
+5. Use `<Suspense>` to show a loading indicator(s)
+6. Use Error Boundary to handle errors
 
 ## Hooks for data fetching
 
@@ -44,7 +51,7 @@ function List() {
 
 ## Mutations and updates
 
-After updating the the data in the backend, the UI must be notified to refetch certain paths. For this there are `refetch*` methods for each `GET` operation (hook). Calling refetch does nothing if there are no components currently mounted using the corresponding hooks. This means it is safe to call `refetch*` just in case, whenever the data has been mutated. It is also recommended to put these "mutation / what needs to be refetch" rules to a separate file, for example `api.js`:
+After updating the the data in the backend, the UI must be notified to refetch certain paths. For this there are `refetch*` methods for each `GET` operation (hook). Calling refetch does nothing if there are no components currently mounted using the corresponding hooks. This means it is safe to call `refetch*` just in case, whenever the data has been mutated. It is recommended to put these "mutation / what needs to be refetch" rules to a separate file, for example `api.js`:
 
 ```js
 import * as client from './client';
@@ -53,10 +60,14 @@ export * from './client';
 
 export async function postItem(item) {
   await client.postItem(null, item);
+
   // Trigger refetching GET /items and rerendering components using
   // `useItems()`.
   // Does nothing, if there are no components mounted using `useItems()`.
   await client.refetchItems();
+
+  // Multiple refetch calls in parallel:
+  // await Promise.all([client.refetchX(), client.refetchY(), client.refetchZ()]);
 }
 // ...
 ```

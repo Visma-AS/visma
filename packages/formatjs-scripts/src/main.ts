@@ -15,7 +15,7 @@ async function main() {
     idInterpolationPattern: '[sha512:contenthash:base64:6]',
   });
 
-  mkdir(source, { recursive: true });
+  await mkdir(source, { recursive: true });
 
   await writeFile(`${source}/${defaultLocale}.json`, resultAsString);
 

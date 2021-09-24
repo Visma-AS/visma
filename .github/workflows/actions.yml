@@ -34,7 +34,6 @@ jobs:
           path: |
             .
             !**/node_modules
-            !**/src
           retention-days: 0.05
 
   create_deployment:

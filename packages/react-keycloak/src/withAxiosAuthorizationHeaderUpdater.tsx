@@ -3,13 +3,14 @@ import axios from 'axios';
 import React, { ReactNode, useState } from 'react';
 import type { Props, Provider } from './index.js';
 
-interface PropsWithAxios extends Props {
+export interface PropsWithAxios extends Props {
   axios?: AxiosStatic | Promise<AxiosStatic>;
+  children: JSX.Element;
 }
 
 export default function withAxiosAuthorizationHeaderUpdater(
   Provider: Provider
-) {
+): Provider {
   return function ReactKeycloakProvider(props: PropsWithAxios) {
     const {
       authClient,
@@ -40,5 +41,5 @@ export default function withAxiosAuthorizationHeaderUpdater(
         {initialized && (other as { children: ReactNode }).children}
       </Provider>
     );
-  } as unknown as typeof Provider;
+  } as unknown as Provider;
 }

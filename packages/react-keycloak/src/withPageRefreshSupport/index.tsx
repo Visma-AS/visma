@@ -15,7 +15,7 @@ export const initOptions = {
 export default function withPageRefreshSupport(Provider: Provider) {
   return withLocalStorageKeyContext(function ReactKeycloakProvider(
     props: Props
-  ) {
+  ): Provider {
     const { authClient, onTokens, ...other } = props;
     const [initialized, setInitialized] = useState(false);
     const [storedTokens, setStoredTokens] = useLocalStorageJson(
@@ -59,6 +59,6 @@ export default function withPageRefreshSupport(Provider: Provider) {
       >
         {initialized && (other as { children: ReactNode }).children}
       </Provider>
-    );
+    ) as unknown as Provider;
   } as unknown as Provider);
 }

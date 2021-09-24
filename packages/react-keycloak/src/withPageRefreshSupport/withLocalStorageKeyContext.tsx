@@ -1,17 +1,16 @@
 import React, { createContext, useContext } from 'react';
 import type { Props, Provider } from '../index.js';
 
-interface PropsWithLocalStorageKey extends Props {
+export interface PropsWithLocalStorageKey extends Props {
   localStorageKey?: string;
+  children: JSX.Element;
 }
 
 const Context = createContext<any>(undefined);
 
 export const useLocalStorageKey = () => useContext(Context);
 
-export default function withLocalStorageKeyContext(
-  Provider: Provider
-): Provider {
+export default function withLocalStorageKeyContext(Provider: Provider) {
   return function ReactKeycloakProvider(props: PropsWithLocalStorageKey) {
     const { authClient, localStorageKey = 'keycloak_tokens', ...other } = props;
 
@@ -20,5 +19,5 @@ export default function withLocalStorageKeyContext(
         <Provider authClient={authClient} {...other} />
       </Context.Provider>
     );
-  } as unknown as Provider;
+  };
 }

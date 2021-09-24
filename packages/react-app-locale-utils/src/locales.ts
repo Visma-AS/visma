@@ -1,1 +1,1 @@
-export default JSON.parse(process.env['REACT_APP_LOCALES'] ?? '[]');
+export default JSON.parse(process.env.REACT_APP_LOCALES ?? '[]');

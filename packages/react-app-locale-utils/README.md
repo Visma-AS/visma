@@ -14,8 +14,6 @@ REACT_APP_LOCALES=["da-DK","en-US","es-ES","fi-FI","lt-LT","lv-LV","nb-NO","nl-N
 ```js
 import useDateFnsLocale from '@visma/react-app-locale-utils/lib/useLocale';
 
-// ...
-
 const [locale, setLocale] = useLocale();
 const [lang] = locale.split('-');
 ```
@@ -48,6 +46,6 @@ const theme = createTheme(
 );
 
 <ThemeProvider theme={theme}>
-  <DataGrid />
+  <App />
 </ThemeProvider>;
 ```

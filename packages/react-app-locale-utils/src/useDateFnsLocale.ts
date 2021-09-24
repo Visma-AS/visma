@@ -1,10 +1,11 @@
 import { create } from '@postinumero/use-async';
 import useLocale from './useLocale.js';
 
-const [, , useLoaderSafe] = create(
+const [, , useImportSafe] = create(
   (locale: string) =>
     import(
       /* webpackChunkName: "date-fns-locale.[request]" */
+      // TODO: get list from process.env.REACT_APP_LOCALES
       /* webpackInclude: /(da|en-US|es|fi|lt|lv|nb|nl|ro|sv)[\\/]index\.js$/ */
       `date-fns/locale/${locale}`
     )
@@ -13,9 +14,9 @@ const [, , useLoaderSafe] = create(
 export default function useDateFnsLocale() {
   const [locale] = useLocale();
   const [lang] = locale.split('-');
-
-  const [, primary] = useLoaderSafe(locale);
-  const [, secondary] = useLoaderSafe(lang);
+  // TODO: map to available date-fns locale, import just one using useImport
+  const [, primary] = useImportSafe(locale);
+  const [, secondary] = useImportSafe(lang);
 
   return (primary ?? secondary).default;
 }

@@ -11,9 +11,20 @@ import { target } from './index.js';
 const source = 'lang';
 
 async function main() {
-  const resultAsString = await extract(await fg('../*/src/**/*.js'), {
-    idInterpolationPattern: '[sha512:contenthash:base64:6]',
-  });
+  let isWorkspace = false;
+  try {
+    const packageJson = await fsExtra.readJson('../../package.json');
+    if (packageJson.workspaces) {
+      isWorkspace = true;
+    }
+  } catch {}
+
+  const resultAsString = await extract(
+    await fg(`${isWorkspace ? '../*/' : ''}src/**/*.js`),
+    {
+      idInterpolationPattern: '[sha512:contenthash:base64:6]',
+    }
+  );
 
   await mkdir(source, { recursive: true });
 
@@ -31,7 +42,9 @@ async function main() {
     // By a convention, we expect libraries to have pre-translated strings in
     // lang directory.
     // https://formatjs.io/docs/guides/distribute-libraries/#declaring-with-a-convention
-    ...(await fg(`../../node_modules/**/${source}/${locale}.json`)),
+    ...(await fg(
+      `${isWorkspace ? '../../' : ''}node_modules/**/${source}/${locale}.json`
+    )),
   ];
 
   const defaultLocaleFiles = await getFiles(defaultLocale);

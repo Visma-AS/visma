@@ -10,16 +10,16 @@ export default function IntlProvider({
   messages,
   ...otherProps
 }: {
-  locale: string;
+  locale?: string;
   [otherOptions: string]: any;
 }) {
   const [localeSetting] = useLocale();
-  locale = locale ?? localeSetting;
+  locale = locale ?? (localeSetting as string);
 
   return (
     <ReactIntlProvider
       messages={{
-        ...useMessages({ locale: locale, defaultLocale }),
+        ...useMessages({ locale, defaultLocale }),
         ...messages,
       }}
       locale={locale}

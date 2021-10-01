@@ -24,8 +24,8 @@
     "scripts"
   ],
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "dependencies": {
     "@formatjs/cli": "^4.2.33",
@@ -35,7 +35,6 @@
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
-    "@visma/tsconfig": "^0.1.0",
     "typescript": "^4.4.3"
   },
   "publishConfig": {

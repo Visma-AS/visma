@@ -23,8 +23,8 @@
     "lib"
   ],
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "dependencies": {
     "@mui/material": "^5.0.0",
@@ -33,7 +33,6 @@
     "date-fns": "^2.24.0"
   },
   "devDependencies": {
-    "@visma/tsconfig": "^0.1.0",
     "typescript": "^4.4.3"
   },
   "publishConfig": {

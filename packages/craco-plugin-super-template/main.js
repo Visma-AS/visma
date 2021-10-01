@@ -22,6 +22,7 @@ const plugin = {
         },
         babel: {
           presets: ['@visma/formatjs'],
+          plugins: ['codegen'],
         },
       }),
   },

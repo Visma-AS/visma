@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-intl-bundled-messages",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-intl-bundled-messages",
   "repository": {
     "type": "git",
@@ -23,12 +23,12 @@
     "lib"
   ],
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "dependencies": {
     "@postinumero/use-async": "^0.3.2",
-    "@visma/react-app-locale-utils": "^0.1.0",
+    "@visma/react-app-locale-utils": "^0.2.0",
     "react-intl": "^5.20.10"
   },
   "devDependencies": {

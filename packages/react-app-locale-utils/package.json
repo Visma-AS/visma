@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-app-locale-utils",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-locale-utils",
   "repository": {
     "type": "git",
@@ -27,12 +27,18 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@mui/material": "^5.0.0",
     "@postinumero/storage": "^0.3.0",
     "@postinumero/use-async": "^0.3.0",
-    "date-fns": "^2.24.0"
+    "dotenv": "^10.0.0",
+    "fast-glob": "^3.2.7",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.0.2",
+    "date-fns": "^2.24.0",
     "typescript": "^4.4.3"
   },
   "publishConfig": {

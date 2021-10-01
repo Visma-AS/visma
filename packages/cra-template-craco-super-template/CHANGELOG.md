@@ -1,3 +1,7 @@
+# 0.1.3
+
+- Add missing `keycloak.realm` to test hostname in public.config
+
 # 0.1.2
 
 - Remove extraneous `<IntlProvider>`

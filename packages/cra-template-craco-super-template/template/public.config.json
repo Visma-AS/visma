@@ -18,7 +18,10 @@
   [
     "test.example.com",
     {
-      "backend": { "baseURL": "https://api.test.example.com" }
+      "backend": { "baseURL": "https://api.test.example.com" },
+      "keycloak": {
+        "realm": "super-template-dev"
+      }
     }
   ]
 ]

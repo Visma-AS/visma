@@ -1,5 +1,5 @@
-import { useLocale } from '@visma/react-app-locale-utils';
 import defaultLocaleValue from '@visma/react-app-locale-utils/lib/defaultLocale.js';
+import useLocale from '@visma/react-app-locale-utils/lib/useLocale.js';
 import React from 'react';
 import { IntlProvider as ReactIntlProvider } from 'react-intl';
 import useMessages from './useMessages.js';

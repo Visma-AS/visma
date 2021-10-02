@@ -1,3 +1,7 @@
+# 0.1.3
+
+- Fix import paths
+
 # 0.1.2
 
 - Update dependencies

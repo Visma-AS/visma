@@ -1,4 +1,4 @@
-import useLocalStorageJson from '@postinumero/storage/lib/useLocalStorageJson';
+import useLocalStorageJson from '@postinumero/storage/lib/useLocalStorageJson.js';
 import { useMemo } from 'react';
 import defaultLocale from './defaultLocale.js';
 

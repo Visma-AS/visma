@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Fix import paths
+
 # 0.2.0
 
 - **Breaking:** Optimize `useDateFnsLocale`, requires `babel-plugin-codegen`

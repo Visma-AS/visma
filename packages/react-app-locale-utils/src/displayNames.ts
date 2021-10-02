@@ -1,4 +1,4 @@
-import { defaultLocale } from '.';
+import defaultLocale from './defaultLocale.js';
 import locales from './locales.js';
 
 declare namespace Intl {

@@ -1,3 +1,7 @@
+# 0.1.4
+
+- Fix package structure
+
 # 0.1.3
 
 - Update dependencies

@@ -7,10 +7,9 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "prebuild": "npm run build --workspace=packages/react-app-locale-utils --workspace=packages/react-keycloak --workspace=packages/react-intl-bundled-messages",
-    "build": "npm run build --workspace=packages --if-present",
-    "test": "npm test --workspace=packages --if-present",
-    "prepare": "husky install"
+    "build": "node --experimental-json-modules ./scripts/build.js",
+    "prepare": "husky install",
+    "test": "npm test --workspace=packages --if-present"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
@@ -20,7 +19,8 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
-    "sort-package-json": "^1.50.0"
+    "sort-package-json": "^1.50.0",
+    "toposort": "^2.0.2"
   },
   "engines": {
     "node": ">=16.0.0",

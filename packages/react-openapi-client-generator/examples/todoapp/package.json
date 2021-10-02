@@ -4,18 +4,18 @@
   "private": true,
   "homepage": "/visma/react-openapi-client-generator/examples/todoapp",
   "scripts": {
+    "prebuild": "npm run generate-client",
+    "build": "react-scripts build",
+    "build:server": "webpack --config webpack.config.server.mjs --mode production",
+    "build:ssr": "npm-run-all build build:server",
     "dev:server": "npm run build:server -- --mode development --watch",
+    "eject": "react-scripts eject",
     "generate-client": "react-openapi-client-generator src/TodoMVC-API.json src/client.ts",
     "prestart": "npm run generate-client",
     "start": "react-scripts start",
     "start:prod": "node ./build/.server/index.js",
     "start:ssr": "nodemon ./build/.server/index.js",
-    "prebuild": "npm run generate-client",
-    "build": "react-scripts build",
-    "build:server": "webpack --config webpack.config.server.mjs --mode production",
-    "build:ssr": "npm-run-all build build:server",
-    "test": "react-scripts test --transformIgnorePatterns \"<rootDir>/node_modules/(?!@postinumero/use-async)/\"",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --transformIgnorePatterns \"<rootDir>/node_modules/(?!@postinumero/use-async)/\""
   },
   "browserslist": {
     "production": [
@@ -35,6 +35,14 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^react$": "<rootDir>/../../node_modules/react",
+      "^react/(.*)$": "<rootDir>/../../node_modules/react/$1",
+      "^react-dom$": "<rootDir>/../../node_modules/react-dom",
+      "^react-dom/(.*)$": "<rootDir>/../../node_modules/react-dom/$1"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -50,8 +58,8 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
     "npm-run-all": "^4.1.5",
-    "react": "^18.0.0-alpha-031abd24b-20210907",
-    "react-dom": "^18.0.0-alpha-031abd24b-20210907",
+    "react": "^18.0.0-alpha-bdd6d5064-20211001",
+    "react-dom": "^18.0.0-alpha-bdd6d5064-20211001",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-ssr-prepass": "^1.4.0",

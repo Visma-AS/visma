@@ -1,6 +1,6 @@
 import { deepMergeWithArray } from '@craco/craco/lib/utils.js';
-import { target } from '@visma/formatjs-scripts';
-import path from 'path';
+import publicConfigWebpackAlias from '@visma/public.config/lib/webpackAlias.js';
+import bundledMessagesWebpackAlias from '@visma/react-intl-bundled-messages/lib/webpackAlias.js';
 
 const plugin = {
   plugin: {
@@ -8,16 +8,8 @@ const plugin = {
       deepMergeWithArray(cracoConfig, {
         webpack: {
           alias: {
-            // Enable imports from `.compiled-lang/fi-FI.json` etc.
-            [target]: path.resolve(`./${target}`),
-
-            'public.config': path.resolve('./public.config'),
-
-            // https://formatjs.io/docs/guides/advanced-usage/#react-intl-without-parser-40-smaller
-            ...(env === 'production' && {
-              '@formatjs/icu-messageformat-parser':
-                '@formatjs/icu-messageformat-parser/no-parser',
-            }),
+            ...bundledMessagesWebpackAlias(env),
+            ...publicConfigWebpackAlias,
           },
         },
         babel: {

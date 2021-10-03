@@ -4,7 +4,21 @@
 
 ## Usage
 
-1. Add Webpack resolve alias from `.compiled-lang` to `src/.compiled-lang`
+1. Add module resolve alias. In Webpack config:
+
+   ```js
+   import bundledMessagesWebpackAlias from '@visma/react-intl-bundled-messages/lib/webpackAlias.js';
+
+   export default {
+     //...
+     resolve: {
+       alias: {
+         ...bundledMessagesWebpackAlias(mode),
+       },
+     },
+   };
+   ```
+
 2. Build messages using [@visma/formatjs-scripts](https://github.com/Visma-AS/visma/tree/main/packages/formatjs-scripts)
 3. Add `IntlProvider`:
 

@@ -36,15 +36,6 @@ jobs:
             !**/node_modules
           retention-days: 0.05
 
-      - id: set-matrix
-        run: node --experimental-json-modules ./scripts/listPackages.js > packageList.json
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: packageList
-          path: packageList.json
-          retention-days: 0.05
-
   create_deployment:
     needs: install_build_test
     name: Create deploy artifact
@@ -108,13 +99,19 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
       - uses: actions/download-artifact@v2
         with:
-          name: packageList
+          name: build
           path: .
 
       - id: set-matrix
-        run: echo "::set-output name=matrix::$(cat packageList.json)"
+        run: node --experimental-json-modules ./scripts/listPackages.js
 
   publish:
     needs: [install_build_test, list_packages]

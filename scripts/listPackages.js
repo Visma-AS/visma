@@ -1,11 +1,7 @@
-import fg from 'fast-glob';
+import { readdir } from 'fs/promises';
 
-const packages = [];
-
-for (const packagePath of await fg('packages/*/package.json')) {
-  const { name } = (await import(`../${packagePath}`)).default;
-
-  packages.push(name);
-}
-
-console.log(JSON.stringify({ package: packages }));
+console.log(
+  `::set-output name=matrix::${JSON.stringify({
+    package: await readdir('packages'),
+  })}`
+);

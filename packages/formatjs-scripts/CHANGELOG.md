@@ -1,3 +1,7 @@
+# x.y.z
+
+- **Breaking:** Move `export { target }` to `@visma/react-intl-bundled-messages`
+
 # 0.1.4
 
 - Fix package structure

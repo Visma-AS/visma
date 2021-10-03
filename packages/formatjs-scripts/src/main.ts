@@ -3,10 +3,10 @@
 import { compile, extract } from '@formatjs/cli';
 import defaultLocale from '@visma/react-app-locale-utils/lib/defaultLocale.js';
 import locales from '@visma/react-app-locale-utils/lib/locales.js';
+import target from '@visma/react-intl-bundled-messages/lib/target.js';
 import fg from 'fast-glob';
 import fsExtra from 'fs-extra';
 import { mkdir, writeFile } from 'fs/promises';
-import { target } from './index.js';
 
 const source = 'lang';
 

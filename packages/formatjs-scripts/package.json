@@ -12,12 +12,6 @@
     "email": "arno.saine@visma.com"
   },
   "type": "module",
-  "exports": {
-    ".": "./lib/index.js",
-    "./lib": "./lib/index.js",
-    "./lib/*": "./lib/*",
-    "./*": "./lib/*.js"
-  },
   "bin": "./scripts/main.js",
   "files": [
     "lib",
@@ -30,6 +24,7 @@
   "dependencies": {
     "@formatjs/cli": "^4.2.33",
     "@visma/react-app-locale-utils": "^0.2.0",
+    "@visma/react-intl-bundled-messages": "^0.1.4",
     "dotenv": "^10.0.0",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0"

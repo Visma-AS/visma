@@ -1,6 +1,6 @@
+import config from '@visma/public.config';
 import type { AxiosStatic } from 'axios';
 import { useMemo } from 'react';
-import config from './publicConfig.js';
 
 export default function BackendBaseURL({
   axios,

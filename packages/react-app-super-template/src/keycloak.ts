@@ -1,4 +1,4 @@
+import config from '@visma/public.config';
 import Keycloak from 'keycloak-js';
-import config from './publicConfig.js';
 
 export default Keycloak(config.keycloak);

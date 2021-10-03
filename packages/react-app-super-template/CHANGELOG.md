@@ -1,3 +1,7 @@
+# 0.1.2
+
+- Use `@visma/public.config`
+
 # 0.1.1
 
 - Fix incorrect `@postinumero/use-async` `create` call

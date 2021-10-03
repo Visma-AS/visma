@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-app-super-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-super-template",
   "repository": {
     "type": "git",
@@ -23,13 +23,14 @@
     "lib"
   ],
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "dependencies": {
     "@postinumero/use-async": "^0.3.2",
     "@visma/formatjs-scripts": "^0.1.0",
     "@visma/msw-openapi-backend-integration": "^0.1.2",
+    "@visma/public.config": "^0.1.0",
     "@visma/react-intl-bundled-messages": "^0.1.1",
     "@visma/react-keycloak": "^0.1.1",
     "@visma/react-openapi-client-generator": "^0.1.5",

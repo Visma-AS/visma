@@ -5,17 +5,17 @@
   "homepage": "/visma/react-openapi-client-generator/examples/todoapp",
   "scripts": {
     "prebuild": "npm run generate-client",
-    "build": "react-scripts build",
+    "build": "craco build",
     "build:server": "webpack --config webpack.config.server.mjs --mode production",
     "build:ssr": "npm-run-all build build:server",
     "dev:server": "npm run build:server -- --mode development --watch",
     "eject": "react-scripts eject",
     "generate-client": "react-openapi-client-generator src/TodoMVC-API.json src/client.ts",
     "prestart": "npm run generate-client",
-    "start": "react-scripts start",
+    "start": "craco start",
     "start:prod": "node ./build/.server/index.js",
     "start:ssr": "nodemon ./build/.server/index.js",
-    "test": "react-scripts test --transformIgnorePatterns \"<rootDir>/node_modules/(?!@postinumero/use-async)/\""
+    "test": "craco test --transformIgnorePatterns \"<rootDir>/node_modules/(?!@postinumero/use-async)/\""
   },
   "browserslist": {
     "production": [
@@ -44,6 +44,7 @@
     }
   },
   "dependencies": {
+    "@craco/craco": "^6.3.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",

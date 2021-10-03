@@ -36,6 +36,15 @@ jobs:
             !**/node_modules
           retention-days: 0.05
 
+      - id: set-matrix
+        run: node --experimental-json-modules ./scripts/listPackages.js > packageList.json
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: packageList
+          path: packageList.json
+          retention-days: 0.05
+
   create_deployment:
     needs: install_build_test
     name: Create deploy artifact
@@ -92,25 +101,28 @@ jobs:
           branch: gh-pages
           folder: public
 
-  publish:
+  list_packages:
     needs: install_build_test
+    name: List packages
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: packageList
+          path: .
+
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$(cat packageList.json)"
+
+  publish:
+    needs: [install_build_test, list_packages]
     name: Publish to npm if version change
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     strategy:
-      matrix:
-        package:
-          - babel-preset-formatjs
-          - cra-template-craco-super-template
-          - craco-plugin-super-template
-          - formatjs-scripts
-          - msw-openapi-backend-integration
-          - react-app-locale-utils
-          - react-app-super-template
-          - react-intl-bundled-messages
-          - react-keycloak
-          - react-openapi-client-generator
-          - tsconfig
+      matrix: ${{fromJson(needs.list_packages.outputs.matrix)}}
     steps:
       - uses: actions/download-artifact@v2
         with:

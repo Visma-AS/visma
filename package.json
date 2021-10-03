@@ -20,7 +20,9 @@
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "sort-package-json": "^1.50.0",
-    "toposort": "^2.0.2"
+    "toposort": "^2.0.2",
+    "cross-spawn": "^7.0.3",
+    "fast-glob": "^3.2.7"
   },
   "engines": {
     "node": ">=16.0.0",

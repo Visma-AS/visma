@@ -1,3 +1,7 @@
+# 0.1.4
+
+- Overwrite API schema `server.url` with `config.backend.baseURL`
+
 # 0.1.3
 
 - Fix build

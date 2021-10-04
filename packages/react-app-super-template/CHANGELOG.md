@@ -1,3 +1,7 @@
+# 0.1.3
+
+- Fix build
+
 # 0.1.2
 
 - Use `@visma/public.config`

@@ -45,9 +45,13 @@ const buildOrder = toposort(internalDependencyGraph).reverse();
 const buildPaths = buildOrder.map(toPackagePath);
 
 for (const buildPath of buildPaths) {
-  spawn.sync(
+  const { status } = spawn.sync(
     'npm',
     ['run', 'build', '--workspace', buildPath, '--if-present'],
     { stdio: 'inherit' }
   );
+
+  if (status !== 0) {
+    throw new Error('Build error');
+  }
 }

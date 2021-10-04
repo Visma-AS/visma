@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-keycloak",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-keycloak",
   "repository": {
     "type": "git",
@@ -23,8 +23,8 @@
     "lib"
   ],
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "dependencies": {
     "@postinumero/react-auth": "^0.2.0",

@@ -1,3 +1,7 @@
+# x.y.z
+
+- Add `.env` example how to use `@visma/react-keycloak` mock implementation of `ReactKeycloakProvider`
+
 # 0.1.3
 
 - Add missing `keycloak.realm` to test hostname in public.config

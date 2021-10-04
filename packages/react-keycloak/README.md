@@ -142,3 +142,13 @@ const ReactKeycloakProvider = withAxiosAuthorizationHeaderUpdater(Provider);
   ...
 </ReactKeycloakProvider>;
 ```
+
+### `withMockProvider`
+
+If `REACT_APP_KEYCLOAK_MOCK_USER` environment variable is set, mock implementation of `ReactKeycloakProvider` is used.
+
+Example:
+
+```sh
+REACT_APP_KEYCLOAK_MOCK_USER={"name":"John Doe","email":"john.doe@example.com","realm_access":{"roles":[]},"resource_access":{"super-template":{"roles":["admin"]}}}
+```

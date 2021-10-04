@@ -10,6 +10,7 @@ export { default as useIsAuthenticated } from './helpers/useIsAuthenticated.js';
 export { default as ReactKeycloakProvider } from './ReactKeycloakProvider.js';
 export { default as useKeycloak } from './useKeycloak.js';
 export { default as withAxiosAuthorizationHeaderUpdater } from './withAxiosAuthorizationHeaderUpdater.js';
+export { default as withMockProvider } from './withMockProvider.js';
 export { default as withPageRefreshSupport } from './withPageRefreshSupport/index.js';
 
 export type Provider = typeof ReactKeycloakProvider;

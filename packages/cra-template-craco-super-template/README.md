@@ -3,6 +3,7 @@
 [Create React App](https://create-react-app.dev/) template with:
 
 - [@visma/msw-openapi-backend-integration](https://github.com/Visma-AS/visma/tree/main/packages/msw-openapi-backend-integration)
+- [@visma/public.config](https://github.com/Visma-AS/visma/tree/main/packages/public.config)
 - [@visma/react-app-locale-utils](https://github.com/Visma-AS/visma/tree/main/packages/react-app-locale-utils)
 - [@visma/react-keycloak](https://github.com/Visma-AS/visma/tree/main/packages/react-keycloak)
 - [@visma/react-openapi-client-generator](https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator)

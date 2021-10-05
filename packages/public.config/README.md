@@ -38,10 +38,10 @@ axios.defaults.baseURL = config.backend.baseURL;
      .default;
    ```
 
-   > ℹ To use dynamic paths, `location` object values are available in the `url` when wrapped in `\${}`. Example:
+   > ℹ To use dynamic paths, `location` object values are available in the `url` when wrapped in `${}`. Example:
    >
    > ```js
-   > const url = process.env.PUBLIC_URL + '/config/\\${hostname}.json';
+   > const url = process.env.PUBLIC_URL + '/config/${hostname}.json';
    > ```
 
 ## Build time config

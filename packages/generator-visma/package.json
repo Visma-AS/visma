@@ -1,0 +1,19 @@
+{
+  "name": "@visma/generator-visma",
+  "version": "0.1.0",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "type": "module",
+  "files": [
+    "generators"
+  ],
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "yeoman-generator": "^5.4.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

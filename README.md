@@ -32,7 +32,6 @@ Tools and other utilities by Frontend discipline and contributors.
 - Every package should use the `@visma` scope
 - If the package is for a specific technology, prefix with that. Examples:
   - `@visma/react-foo`
-
   - `@visma/babel-preset-bar`
   - `@visma/angular-baz`
   - `@visma/mui-qux`

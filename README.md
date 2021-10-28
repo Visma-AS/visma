@@ -2,6 +2,8 @@
 
 Tools and other utilities by Frontend discipline and contributors.
 
+![vfd-v3](https://user-images.githubusercontent.com/93318583/139228787-1082d2db-e721-4aa1-a48b-57e69870427c.png)
+
 ## How to add a new package?
 
 1. Use one of the built-in templates to get started:

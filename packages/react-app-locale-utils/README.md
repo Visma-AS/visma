@@ -1,5 +1,7 @@
 # @visma/react-app-locale-utils
 
+Locale state, display names, date-fns, MUI and other locale utilities.
+
 ## Usage
 
 `.env`

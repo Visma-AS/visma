@@ -1,6 +1,6 @@
 # @visma/msw-openapi-backend-integration
 
-Helper to integrate Mock Service Worker with OpenAPI Backend.
+Helper to integrate [Mock Service Worker](https://mswjs.io/) with [OpenAPI Backend](https://github.com/anttiviljami/openapi-backend).
 
 [TodoMVC example](https://visma-as.github.io/visma/react-openapi-client-generator/examples/todoapp/)
 
@@ -17,4 +17,4 @@ import definition from '../petstore.json';
 export const worker = setupWorker(...handlers({ definition }));
 ```
 
-For dynamic responses and mutations, see `requestLogicHandlers` in [TodoMVC example source](https://github.com/Visma-AS/visma/tree/main/packages/react-openapi-client-generator/examples/todoapp/src/mocks/requestLogicHandlers.ts).
+For dynamic responses and mutations, see `requestLogicHandlers` in [TodoMVC example source](/packages/react-openapi-client-generator/examples/todoapp/src/mocks/requestLogicHandlers.ts).

@@ -4,17 +4,48 @@ Tools and other utilities by Frontend discipline and contributors.
 
 ![vfd-v3-transparent](https://user-images.githubusercontent.com/93318583/139236084-749639e8-c743-4c1b-9259-bfa26c251d00.png)
 
+## Packages
+
+### Plugins & Presets
+
+- [@visma/babel-preset-formatjs](/packages/babel-preset-formatjs) – [babel-plugin-formatjs](https://formatjs.io/docs/tooling/babel-plugin/) with `removeDefaultMessage` set `true` in production
+- [@visma/craco-plugin-super-template](/packages/craco-plugin-super-template) – [CRACO](https://github.com/gsoft-inc/craco) plugin for [@visma/cra-template-craco-super-template](/packages/cra-template-craco-super-template)
+
+### Templates
+
+- [@visma/cra-template-craco-super-template](/packages/cra-template-craco-super-template) – [Create React App](https://create-react-app.dev/) template with multiple preinstalled libraries and predefined configurations
+
+### Tools
+
+- [@visma/formatjs-scripts](/packages/formatjs-scripts) – Extract and compile messages, scan `node_modules` for messages
+- [@visma/generator-visma](/packages/generator-visma) – [Yeoman](https://yeoman.io) npm package generator for this repository
+- [@visma/react-openapi-client-generator](/packages/react-openapi-client-generator) – Generate typed hooks and methods for React app from OpenAPI schema
+
+### Helpers & Utilities
+
+- [@visma/msw-openapi-backend-integration](/packages/msw-openapi-backend-integration) – Helper to integrate [Mock Service Worker](https://mswjs.io/) with [OpenAPI Backend](https://github.com/anttiviljami/openapi-backend)
+- [@visma/react-app-locale-utils](/packages/react-app-locale-utils) – Locale state, display names, date-fns, MUI and other locale utilities
+- [@visma/react-app-super-template](/packages/react-app-super-template) – `AppProvider` for [@visma/cra-template-craco-super-template](/packages/cra-template-craco-super-template)
+- [@visma/react-intl-bundled-messages](/packages/react-intl-bundled-messages) – [`IntlProvider`](https://formatjs.io/docs/react-intl/components/) that lazy loads messages in [current language](/packages/react-app-locale-utils#usage) in Webpack environment
+- [@visma/react-keycloak](/packages/react-keycloak) – Keycloak helper components, hooks, etc.
+
+### Configs
+
+- [@visma/public.config](/packages/public.config) – Runtime and build time configs by hostname
+- [@visma/tsconfig](/packages/tsconfig) – TSConfig, mainly for this repository
+
 ## How to add a new package?
 
-1. Use one of the built-in templates to get started:
+1. Clone this repository
+2. Use one of the built-in templates to get started (alternatively add `packages/<new-package>` files manually):
 
    ```sh
    npm install
    npx yo @visma/visma
    ```
 
-2. If the package has files to be deployed to GitHub Pages, add paths to [actions.yml](.github/workflows/actions.yml#L62-L64)
-3. When you are ready to publish, create a pull request. CI will publish a new version from the main branch if the version changes.
+3. If the package has files to be deployed to GitHub Pages, add paths to [actions.yml](.github/workflows/actions.yml#L62-L64)
+4. When you are ready to publish, create a pull request. CI will publish a new version from the main branch if the version changes.
 
 ## Package guidelines
 
@@ -29,13 +60,13 @@ Tools and other utilities by Frontend discipline and contributors.
 
 ### Naming
 
-- Every package should use the `@visma` scope
+- Every package must use the `@visma` scope
 - If the package is for a specific technology, prefix with that. Examples:
   - `@visma/react-foo`
   - `@visma/babel-preset-bar`
   - `@visma/angular-baz`
   - `@visma/mui-qux`
-- If the package is an integration between external packages, have each name listed alphabetically, join using kebab case, and suffix with `-integration`. Example:
+- If the package is an integration between external packages, list names alphabetically, join using kebab case, and suffix with `-integration`. Example:
   - `@visma/msw-openapi-backend-integration`
 
 ### Versioning
@@ -51,12 +82,12 @@ Follow [SemVer](https://semver.org/). Also, it is recommended:
 
 README.md is required. If applicable, readme should include at least a usage example and documentation of the public API.
 
-Install instructions or any other general things should not be included, unless there is something special to mention.
+Install instructions or other general information should not be included, unless there is something special to mention.
 
 ### Changelog
 
-Include a CHANGELOG.md file.
+Include a CHANGELOG.md file ([example](/packages/react-app-locale-utils/CHANGELOG.md)).
 
 ### Tests
 
-`package.json` may have a `"test"` script. CI makes sure tests are passed before publishing.
+`package.json` may have a `test` script. CI makes sure tests are passed before publishing.

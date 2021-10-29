@@ -1,6 +1,7 @@
 {
   "name": "@visma/generator-visma",
   "version": "0.1.0",
+  "description": "Yeoman npm package generator for this repository.",
   "keywords": [
     "yeoman-generator"
   ],

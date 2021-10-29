@@ -1,6 +1,7 @@
 {
   "name": "@visma/cra-template-craco-super-template",
   "version": "0.1.3",
+  "description": "Create React App template with multiple preinstalled libraries and predefined configurations.",
   "keywords": [
     "react",
     "create-react-app",

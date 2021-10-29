@@ -1,6 +1,7 @@
 {
   "name": "@visma/babel-preset-formatjs",
   "version": "0.1.0",
+  "description": "babel-plugin-formatjs with `removeDefaultMessage` set `true` in production.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/babel-preset-formatjs",
   "repository": {
     "type": "git",

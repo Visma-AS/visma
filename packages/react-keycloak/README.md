@@ -1,5 +1,7 @@
 # @visma/react-keycloak
 
+Keycloak helper components, hooks, etc.
+
 ## Helper components and hooks
 
 ### `useCurrentUser`

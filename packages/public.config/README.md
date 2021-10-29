@@ -1,5 +1,7 @@
 # @visma/public.config
 
+Runtime and build time configs by hostname.
+
 ## Example
 
 ```js

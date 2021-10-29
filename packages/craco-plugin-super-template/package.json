@@ -1,6 +1,7 @@
 {
   "name": "@visma/craco-plugin-super-template",
   "version": "0.1.3",
+  "description": "CRACO plugin for @visma/cra-template-craco-super-template.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/craco-plugin-super-template",
   "repository": {
     "type": "git",

@@ -1,5 +1,7 @@
 # @visma/tsconfig
 
+TSConfig, mainly for this repository.
+
 ## Usage
 
 `tsconfig.json`

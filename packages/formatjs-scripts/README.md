@@ -1,8 +1,10 @@
 # @visma/formatjs-scripts
 
+Extract and compile messages, scan `node_modules` for messages.
+
 ## Usage
 
-1. [Set available locales](https://github.com/Visma-AS/visma/tree/main/packages/react-app-locale-utils#usage)
+1. [Set available locales](/packages/react-app-locale-utils#usage)
 2. Add `.gitignore`:
 
    ```sh

@@ -1,6 +1,7 @@
 {
   "name": "@visma/formatjs-scripts",
   "version": "0.1.4",
+  "description": "Extract and compile messages, scan `node_modules` for messages.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/formatjs-scripts",
   "repository": {
     "type": "git",

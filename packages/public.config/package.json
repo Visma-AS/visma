@@ -1,6 +1,7 @@
 {
   "name": "@visma/public.config",
   "version": "0.1.1",
+  "description": "Runtime and build time configs by hostname.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/public.config",
   "repository": {
     "type": "git",

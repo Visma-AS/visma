@@ -1,6 +1,8 @@
 # Visma
 
-Tools and other utilities by Frontend discipline and contributors.
+Tools, snippets, helpers and other utility packages by Frontend discipline and contributors.
+
+Contributions are welcome!
 
 ![vfd-v3-transparent](https://user-images.githubusercontent.com/93318583/139236084-749639e8-c743-4c1b-9259-bfa26c251d00.png)
 
@@ -91,3 +93,7 @@ Include a CHANGELOG.md file ([example](/packages/react-app-locale-utils/CHANGELO
 ### Tests
 
 `package.json` may have a `test` script. CI makes sure tests are passed before publishing.
+
+## Help / Contact
+
+In any questions or suggestions, feel free to reach out to [@ArnoSaine](https://github.com/ArnoSaine).

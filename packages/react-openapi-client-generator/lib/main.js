@@ -11,6 +11,8 @@ const mapToString = (array, fn) => array.map(fn).join('\n');
 
 const definition = process.argv[2];
 const target = process.argv[3];
+const addLoaders = process.argv[4] === '--add-loaders';
+const isYaml = /.\ya?ml/.test(extname(definition));
 
 const isTypeScript = extname(target) === '.ts';
 
@@ -40,11 +42,20 @@ const [imports, schemaTypes, operationTypings] = await generateTypesForDocument(
   opts
 );
 
+const loaders = ['', 'json-loader', isYaml && 'yaml-loader', ''].filter(
+  (loader) => loader !== false
+);
+
 const content = `${imports}
 import { Document } from 'openapi-client-axios';
 import OpenAPIClientAxios from 'openapi-client-axios';
-import { create } from '@postinumero/use-async';
-import definition from '${[
+import { create } from '@postinumero/use-async';${
+  addLoaders
+    ? `
+// eslint-disable-next-line import/no-webpack-loader-syntax`
+    : ''
+}
+import definition from '${addLoaders ? loaders.join('!') : ''}${[
   '.',
   slash(relative(dirname(target), dirname(definition))),
   basename(definition),

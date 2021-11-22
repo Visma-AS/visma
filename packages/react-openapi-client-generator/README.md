@@ -36,6 +36,14 @@ Generate typed hooks and methods for React app from OpenAPI schema.
 5. Use `<Suspense>` to show a loading indicator(s)
 6. Use Error Boundary to handle errors
 
+### Options
+
+#### `--add-loaders`
+
+Include the API schema in the bundle. Example: `react-openapi-client-generator src/petstore.json src/client.ts --add-loaders`.
+
+This will prefix the import path with `!json-loader!` and with `yaml-loader!` in case of YAML schema.
+
 ## Hooks for data fetching
 
 Each `GET` operation is available as a hook. Hooks return the response data directly. **This is the main approach to fetch data for rendering**. Requests are memoized, so it is fine to call the hooks in any component, right where the data is needed.

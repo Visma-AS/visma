@@ -1,3 +1,7 @@
+# 0.1.6
+
+- Add `--add-loaders` option to include the API schema in the bundle
+
 # 0.1.5
 
 - Upgrade to `@postinumero/use-async@0.3.1`

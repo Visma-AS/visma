@@ -1,0 +1,19 @@
+{
+  "name": "@visma/christmas-elf-name-generator",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Henri Suominen",
+    "email": "henri.suominen@visma.com"
+  },
+  "main": "./main.js",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

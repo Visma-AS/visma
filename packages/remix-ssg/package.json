@@ -1,0 +1,27 @@
+{
+  "name": "@visma/remix-ssg",
+  "version": "0.1.0",
+  "description": "Generate static site from Remix app.",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/remix-ssg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
+  "type": "module",
+  "bin": "./main.js",
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "cross-spawn-with-kill": "^1.0.0",
+    "fs-extra": "^10.0.0",
+    "wait-on": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

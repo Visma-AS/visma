@@ -19,9 +19,11 @@ Contributions are welcome!
 
 ### Tools
 
+- [@visma/build-npm-workspace](/packages/build-npm-workspace) – Build npm workspace packages in the correct order of internal dependency graph
 - [@visma/formatjs-scripts](/packages/formatjs-scripts) – Extract and compile messages, scan `node_modules` for messages
 - [@visma/generator-visma](/packages/generator-visma) – [Yeoman](https://yeoman.io) npm package generator for this repository
 - [@visma/react-openapi-client-generator](/packages/react-openapi-client-generator) – Generate typed hooks and methods for React app from OpenAPI schema
+- [@visma/remix-ssg](/packages/remix-ssg) – Generate static site from Remix app
 
 ### Helpers & Utilities
 

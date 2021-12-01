@@ -1,13 +1,9 @@
 import christmasElfNameGenerator from '@visma/christmas-elf-name-generator';
 import React, { useRef, useState } from 'react';
 import RubberBand from 'react-reveal/RubberBand';
-import type { MetaFunction } from 'remix';
 import { Link } from 'remix';
-import { description, title } from '../../../messages.json';
 
-export let meta: MetaFunction = () => {
-  return { title, description };
-};
+export { meta } from '.';
 
 export default function Generator() {
   const [elfName, setElfName] = useState<string>();

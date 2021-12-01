@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
 import generator from '@visma/christmas-elf-name-generator';
+import React, { useRef, useState } from 'react';
 import { Link } from 'remix';
 
 export function meta() {
@@ -22,7 +22,7 @@ export default function ActionsDemo() {
       <span style={{ fontSize: '2em' }}>{result}</span>
       <br />
       <sub>
-        ...sure... <Link to="/">back to frontpage?</Link>
+        ...sure... <Link to="./..">back to frontpage?</Link>
       </sub>
     </p>
   ) : (

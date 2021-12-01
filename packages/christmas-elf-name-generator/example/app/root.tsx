@@ -1,4 +1,5 @@
 import * as React from 'react';
+import type { LinksFunction } from 'remix';
 import {
   Link,
   Links,
@@ -7,13 +8,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
   useLocation,
 } from 'remix';
-import type { LinksFunction } from 'remix';
-
 import deleteMeRemixStyles from '~/styles/demos/remix.css';
 import globalStylesUrl from '~/styles/global.css';
+
 //import darkStylesUrl from "~/styles/dark.css";
 
 /**

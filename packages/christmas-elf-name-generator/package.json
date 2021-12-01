@@ -12,6 +12,9 @@
     "email": "henri.suominen@visma.com"
   },
   "main": "./main.js",
+  "workspaces": [
+    "example"
+  ],
   "publishConfig": {
     "access": "public",
     "tag": "latest"

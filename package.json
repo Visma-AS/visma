@@ -7,7 +7,7 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "build": "node --experimental-json-modules ./scripts/build.js",
+    "build": "build-npm-workspace",
     "prepare": "husky install",
     "test": "npm test --workspace=packages --if-present"
   },
@@ -16,13 +16,11 @@
     "**/package.json": "sort-package-json"
   },
   "devDependencies": {
+    "@visma/build-npm-workspace": "^0.1.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
-    "sort-package-json": "^1.50.0",
-    "toposort": "^2.0.2",
-    "cross-spawn": "^7.0.3",
-    "fast-glob": "^3.2.7"
+    "sort-package-json": "^1.50.0"
   },
   "engines": {
     "node": ">=16.0.0",

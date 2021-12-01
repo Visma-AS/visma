@@ -34,6 +34,7 @@ spawn.sync(
     '--no-http-keep-alive',
     '--no-host-directories',
     '--level=inf',
+    '--adjust-extension',
     ...resources,
   ],
   { stdio: 'inherit' }

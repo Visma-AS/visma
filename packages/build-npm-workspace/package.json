@@ -1,7 +1,7 @@
 {
   "name": "@visma/build-npm-workspace",
   "version": "0.1.0",
-  "description": "Build npm workspace packages in the order of dependencies.",
+  "description": "Build npm workspace packages in the correct order of internal dependency graph.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/build-npm-workspace",
   "repository": {
     "type": "git",

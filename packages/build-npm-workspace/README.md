@@ -1,6 +1,6 @@
 # @visma/build-npm-workspace
 
-Build npm workspace packages in the order of dependencies.
+Build npm workspace packages in the correct order of internal dependency graph.
 
 ## Usage
 

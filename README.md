@@ -20,6 +20,7 @@ Contributions are welcome!
 ### Tools
 
 - [@visma/build-npm-workspace](/packages/build-npm-workspace) – Build npm workspace packages in the correct order of internal dependency graph
+- [@visma/christmas-elf-name-generator](/packages/christmas-elf-name-generator) – With this high-level neural network -assisted Christmas Elf Name Generator, you can now generate your own custom elf name just in time for christmas!
 - [@visma/formatjs-scripts](/packages/formatjs-scripts) – Extract and compile messages, scan `node_modules` for messages
 - [@visma/generator-visma](/packages/generator-visma) – [Yeoman](https://yeoman.io) npm package generator for this repository
 - [@visma/react-openapi-client-generator](/packages/react-openapi-client-generator) – Generate typed hooks and methods for React app from OpenAPI schema

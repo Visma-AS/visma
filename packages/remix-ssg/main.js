@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import spawn from 'cross-spawn';
+import spawnWithKill from 'cross-spawn-with-kill';
 import fs from 'fs-extra';
 import waitOn from 'wait-on';
 
@@ -10,7 +11,7 @@ const { browserBuildDirectory, publicPath } = new Function(
   )};return module.exports`
 )();
 
-const server = spawn('npm', ['start'], { stdio: 'inherit' });
+const server = spawnWithKill('npm', ['start'], { stdio: 'inherit' });
 
 const resources = ['/', ...process.argv.slice(2)].map(
   (path) => 'http://localhost:3000' + path
@@ -40,4 +41,4 @@ spawn.sync(
 
 await fs.copy(browserBuildDirectory, target + publicPath);
 
-server.kill('SIGINT');
+server.kill();

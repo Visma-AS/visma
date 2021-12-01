@@ -15,6 +15,7 @@
   "bin": "./main.js",
   "dependencies": {
     "cross-spawn": "^7.0.3",
+    "cross-spawn-with-kill": "^1.0.0",
     "fs-extra": "^10.0.0",
     "wait-on": "^6.0.0"
   },

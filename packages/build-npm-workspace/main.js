@@ -1,8 +1,12 @@
+#!/usr/bin/env node
+
 import spawn from 'cross-spawn';
 import fg from 'fast-glob';
+import fs from 'fs-extra';
 import { dirname } from 'path';
 import toposort from 'toposort';
-import packageJson from '../package.json';
+
+const packageJson = await fs.readJson('package.json');
 
 const isInternalDependency = ([, dependency]) =>
   dependencyGraph.some(([packageName]) => packageName === dependency);
@@ -15,7 +19,7 @@ const packages = [];
 
 for (const workspace of packageJson.workspaces) {
   for (const packagePath of await fg(`${workspace}/package.json`)) {
-    const packageJson = (await import(`../${packagePath}`)).default;
+    const packageJson = await fs.readJson(packagePath);
 
     const dependencies = {
       ...packageJson.dependencies,

@@ -1,0 +1,27 @@
+{
+  "name": "@visma/build-npm-workspace",
+  "version": "0.1.0",
+  "description": "Build npm workspace packages in the order of dependencies.",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/build-npm-workspace",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
+  "type": "module",
+  "bin": "./main.js",
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
+    "toposort": "^2.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

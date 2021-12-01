@@ -5,5 +5,5 @@
 ```js
 import christmasElfNameGenerator from '@visma/christmas-elf-name-generator';
 
-christmasElfNameGenerator();
+christmasElfNameGenerator('Rory'); // => "Rory Elf"
 ```

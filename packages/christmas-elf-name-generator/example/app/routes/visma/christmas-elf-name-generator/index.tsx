@@ -1,19 +1,21 @@
 import type { MetaFunction } from 'remix';
 import { Link } from 'remix';
+import { description, title } from '../../../messages.json';
 
-// https://remix.run/api/conventions#meta
 export let meta: MetaFunction = () => {
-  return {
-    title: 'Remix Starter',
-    description: 'Welcome to remix!',
-  };
+  return { title, description };
 };
 
-// https://remix.run/guides/routing#index-routes
 export default function Index() {
   return (
-    <p className="remix__link">
-      <Link to="generator">Yes, I want to find out my Christmas Elf Name!</Link>
-    </p>
+    <>
+      <h1 className="remix__title">{title}</h1>
+      <p>{description}</p>
+      <p className="remix__link">
+        <Link to="generator">
+          Yes, I want to find out my Christmas Elf Name!
+        </Link>
+      </p>
+    </>
   );
 }

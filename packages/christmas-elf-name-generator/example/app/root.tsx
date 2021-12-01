@@ -13,46 +13,20 @@ import {
 import deleteMeRemixStyles from '~/styles/demos/remix.css';
 import globalStylesUrl from '~/styles/global.css';
 
-//import darkStylesUrl from "~/styles/dark.css";
-
-/**
- * The `links` export is a function that returns an array of objects that map to
- * the attributes for an HTML `<link>` element. These will load `<link>` tags on
- * every route in the app, but individual routes can include their own links
- * that are automatically unloaded when a user navigates away from the route.
- *
- * https://remix.run/api/app#links
- */
 export let links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: globalStylesUrl },
-    /*{
-      rel: "stylesheet",
-      href: darkStylesUrl,
-      media: "(prefers-color-scheme: dark)"
-    },*/
     { rel: 'stylesheet', href: deleteMeRemixStyles },
   ];
 };
 
-/**
- * The root module's default export is a component that renders the current
- * route via the `<Outlet />` component. Think of this as the global layout
- * component for your app.
- */
 export default function App() {
   return (
     <Document>
       <Layout>
         <div className="remix__page">
           <main>
-            <h1 className="remix__title">Christmas Elf Name Generator</h1>
-
-            <p>
-              With this high-level neural network -assisted Christmas Elf Name
-              Generator, you can now generate your own custom elf name just in
-              time for christmas!
-            </p>
+            <div className="christmas-tree">🎄</div>
             <Outlet />
           </main>
         </div>
@@ -93,13 +67,11 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
     <div className="remix-app">
       <header className="remix-app__header">
         <div className="container remix-app__header-content">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
-            🎄
-          </Link>
+          <span></span>
           <nav aria-label="Main navigation" className="remix-app__header-nav">
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/visma/christmas-elf-name-generator">Home</Link>
               </li>
               <li>
                 <a href="https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator">

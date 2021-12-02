@@ -28,7 +28,7 @@ function Form({ onSubmit }: FormProps) {
   }
 
   return (
-    <form className="remix__form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h3>Find out your Christmas Elf Name here!</h3>
       <label>
         <div>Enter your name:</div>
@@ -49,13 +49,9 @@ function Result({ elfName }: ResultProps) {
   return (
     <p>
       Ta-da! Your christmas elf name is...
-      <br />
-      <div style={{ fontSize: '2em' }}>
-        <RubberBand>
-          <div>{elfName}</div>
-        </RubberBand>
-      </div>
-      <br />
+      <RubberBand>
+        <div className="elf-name">{elfName}</div>
+      </RubberBand>
       <sub>
         ...sure... <Link to="./..">back to frontpage?</Link>
       </sub>

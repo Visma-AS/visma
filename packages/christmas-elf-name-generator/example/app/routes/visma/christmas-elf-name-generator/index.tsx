@@ -12,9 +12,9 @@ export let meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <h1 className="remix__title">{title}</h1>
+      <h1>{title}</h1>
       <p>{description}</p>
-      <p className="remix__link">
+      <p>
         <Link to="generator">
           Yes, I want to find out my Christmas Elf Name!
         </Link>

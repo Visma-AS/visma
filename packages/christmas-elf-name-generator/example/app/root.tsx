@@ -10,27 +10,20 @@ import {
   ScrollRestoration,
   useLocation,
 } from 'remix';
-import deleteMeRemixStyles from '~/styles/demos/remix.css';
 import globalStylesUrl from '~/styles/global.css';
 
 export let links: LinksFunction = () => {
-  return [
-    { rel: 'stylesheet', href: globalStylesUrl },
-    { rel: 'stylesheet', href: deleteMeRemixStyles },
-  ];
+  return [{ rel: 'stylesheet', href: globalStylesUrl }];
 };
 
 export default function App() {
   return (
     <Document>
-      <Layout>
-        <div className="remix__page">
-          <main>
-            <div className="christmas-tree">🎄</div>
-            <Outlet />
-          </main>
-        </div>
-      </Layout>
+      <div className="app">
+        <Layout>
+          <Outlet />
+        </Layout>
+      </div>
     </Document>
   );
 }
@@ -64,11 +57,11 @@ function Document({
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
+    <>
+      <header>
+        <div className="container">
           <span></span>
-          <nav aria-label="Main navigation" className="remix-app__header-nav">
+          <nav aria-label="Main navigation">
             <ul>
               <li>
                 <Link to="/visma/christmas-elf-name-generator">Home</Link>
@@ -85,17 +78,16 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
           </nav>
         </div>
       </header>
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
-      </div>
-      <footer className="remix-app__footer">
-        <div className="container remix-app__footer-content">
-          <p>
-            &copy; <a href="https://visma.com">Visma</a>
-          </p>
-        </div>
+      <main className="container">
+        <div className="christmas-tree">🎄</div>
+        {children}
+      </main>
+      <footer>
+        <p>
+          &copy; <a href="https://visma.com">Visma</a>
+        </p>
       </footer>
-    </div>
+    </>
   );
 }
 

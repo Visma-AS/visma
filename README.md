@@ -32,6 +32,7 @@ Contributions are welcome!
 - [@visma/react-app-super-template](/packages/react-app-super-template) – `AppProvider` for [@visma/cra-template-craco-super-template](/packages/cra-template-craco-super-template)
 - [@visma/react-intl-bundled-messages](/packages/react-intl-bundled-messages) – [`IntlProvider`](https://formatjs.io/docs/react-intl/components/) that lazy loads messages in [current language](/packages/react-app-locale-utils#usage) in Webpack environment
 - [@visma/react-keycloak](/packages/react-keycloak) – Keycloak helper components, hooks, etc.
+- [@visma/tailwindcss-nordic-cool](/packages/tailwindcss-nordic-cool) – [Nordic cool](https://ux.visma.com/weblibrary/latest/) theme configuration for [tailwindcss](https://tailwindcss.com)
 
 ### Configs
 

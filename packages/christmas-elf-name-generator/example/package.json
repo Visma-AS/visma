@@ -1,0 +1,31 @@
+{
+  "name": "@visma/christmas-elf-name-generator-remix-app",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "postbuild": "remix-ssg /visma/christmas-elf-name-generator/",
+    "dev": "remix dev",
+    "postinstall": "remix setup node",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.0.5",
+    "@remix-run/serve": "^1.0.5",
+    "@visma/christmas-elf-name-generator": "^0.1.0",
+    "@visma/remix-ssg": "^0.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-reveal": "^1.2.2",
+    "remix": "^1.0.5"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.0.5",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

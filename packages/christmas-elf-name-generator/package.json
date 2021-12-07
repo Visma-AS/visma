@@ -1,6 +1,6 @@
 {
   "name": "@visma/christmas-elf-name-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "With this high-level neural network -assisted Christmas Elf Name Generator, you can now generate your own custom elf name just in time for Christmas!",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator",
   "repository": {
@@ -13,6 +13,10 @@
     "email": "henri.suominen@visma.com"
   },
   "main": "./main.js",
+  "files": [
+    "main.js",
+    "main.d.ts"
+  ],
   "workspaces": [
     "example"
   ],

@@ -1,32 +1,34 @@
-import generator from '@visma/christmas-elf-name-generator';
+import christmasElfNameGenerator from '@visma/christmas-elf-name-generator';
 import React, { useRef, useState } from 'react';
+import RubberBand from 'react-reveal/RubberBand';
 import { Link } from 'remix';
 
-export function meta() {
-  return { title: 'Elf Name Generator' };
+export { meta } from '.';
+
+export default function Generator() {
+  const [elfName, setElfName] = useState<string>();
+
+  return elfName ? (
+    <Result elfName={elfName} />
+  ) : (
+    <Form onSubmit={(name) => setElfName(christmasElfNameGenerator(name))} />
+  );
 }
 
-export default function ActionsDemo() {
+type FormProps = {
+  onSubmit: (name: string) => void;
+};
+
+function Form({ onSubmit }: FormProps) {
   let answerRef = useRef<HTMLInputElement>(null);
-  const [result, setResult] = useState();
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    setResult(generator(answerRef.current?.value));
+    onSubmit(answerRef.current?.value!);
   }
 
-  return result ? (
-    <p>
-      Ta-da! Your christmas elf name is...
-      <br />
-      <span style={{ fontSize: '2em' }}>{result}</span>
-      <br />
-      <sub>
-        ...sure... <Link to="./..">back to frontpage?</Link>
-      </sub>
-    </p>
-  ) : (
-    <form className="remix__form" onSubmit={handleSubmit}>
+  return (
+    <form onSubmit={handleSubmit}>
       <h3>Find out your Christmas Elf Name here!</h3>
       <label>
         <div>Enter your name:</div>
@@ -36,5 +38,23 @@ export default function ActionsDemo() {
         <button>Go!</button>
       </div>
     </form>
+  );
+}
+
+type ResultProps = {
+  elfName: string;
+};
+
+function Result({ elfName }: ResultProps) {
+  return (
+    <p>
+      Ta-da! Your christmas elf name is...
+      <RubberBand>
+        <div className="elf-name">{elfName}</div>
+      </RubberBand>
+      <sub>
+        ...sure... <Link to="./..">back to frontpage?</Link>
+      </sub>
+    </p>
   );
 }

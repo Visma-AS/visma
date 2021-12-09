@@ -67,12 +67,22 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
                 <Link to="/visma/christmas-elf-name-generator">Home</Link>
               </li>
               <li>
-                <a href="https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator"
+                >
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://remix.run/docs"
+                >
+                  Remix Docs
+                </a>
               </li>
             </ul>
           </nav>
@@ -84,7 +94,10 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
       </main>
       <footer>
         <p>
-          &copy; <a href="https://visma.com">Visma</a>
+          &copy;{' '}
+          <a rel="noopener noreferrer" target="_blank" href="https://visma.com">
+            Visma
+          </a>
         </p>
       </footer>
     </>

@@ -144,7 +144,7 @@ input:where([type='search']) {
 :root {
   --hs-links: 105 70%;
   --color-foreground: hsl(0, 0%, 100%);
-  --color-background: hsl(278, 73%, 19%);
+  --color-background: rgb(85, 13, 13);
   --color-links: hsl(var(--hs-links) 50%);
   --color-links-hover: hsl(var(--hs-links) 45%);
   --color-border: hsl(0, 85%, 38%);

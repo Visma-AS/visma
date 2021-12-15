@@ -1,6 +1,8 @@
-# x.y.z
+# 0.2.0
 
 - **Breaking:** Move `export { target }` to `@visma/react-intl-bundled-messages`
+- If `remix.config.js` is available, detect `appDirectory` from it
+- Scan also `jsx`, `ts` and `tsx` files for messages
 
 # 0.1.4
 

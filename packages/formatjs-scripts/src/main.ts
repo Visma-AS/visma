@@ -11,16 +11,28 @@ import { mkdir, writeFile } from 'fs/promises';
 const source = 'lang';
 
 async function main() {
+  let appDirectory = 'src';
   let isWorkspace = false;
+
   try {
-    const packageJson = await fsExtra.readJson('../../package.json');
-    if (packageJson.workspaces) {
-      isWorkspace = true;
-    }
-  } catch {}
+    const config = new Function(
+      `const module = {};
+${await fsExtra.readFile('remix.config.js')}
+return module.exports;`
+    )();
+    appDirectory = config.appDirectory ?? 'app';
+  } catch {
+    try {
+      const packageJson = await fsExtra.readJson('../../package.json');
+      if (packageJson.workspaces) {
+        appDirectory = '../*/src';
+        isWorkspace = true;
+      }
+    } catch {}
+  }
 
   const resultAsString = await extract(
-    await fg(`${isWorkspace ? '../*/' : ''}src/**/*.js`),
+    await fg(`${appDirectory}/**/*.{j,t}s{,x}`),
     {
       idInterpolationPattern: '[sha512:contenthash:base64:6]',
     }

@@ -55,7 +55,8 @@ return module.exports;`
     // lang directory.
     // https://formatjs.io/docs/guides/distribute-libraries/#declaring-with-a-convention
     ...(await fg(
-      `${isWorkspace ? '../../' : ''}node_modules/**/${source}/${locale}.json`
+      `${isWorkspace ? '../../' : ''}node_modules/**/${source}/${locale}.json`,
+      { followSymbolicLinks: false }
     )),
   ];
 

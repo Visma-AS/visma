@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Fix infinite recursion when searching for messages. Don't follow symbolic links.
+
 # 0.2.0
 
 - **Breaking:** Move `export { target }` to `@visma/react-intl-bundled-messages`

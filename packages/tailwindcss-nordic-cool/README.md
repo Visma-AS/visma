@@ -4,6 +4,10 @@
 
 [Nordic cool](https://ux.visma.com/weblibrary/latest/) theme configuration for [tailwindcss](https://tailwindcss.com).
 
+## ⚠️ Deprecation notice ⚠️
+
+This package is deprecated in favor of [@visma/tailwindcss-vud](/packages/tailwindcss-vud).
+
 ## Usage
 
 > Note: This guide expects to have `tailwindcss` already in place.

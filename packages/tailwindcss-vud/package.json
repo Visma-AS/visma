@@ -1,0 +1,32 @@
+{
+  "name": "@visma/tailwindcss-vud",
+  "version": "1.0.0",
+  "description": "Visma Unified Design theme configuration for tailwindcss.",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/tailwindcss-vud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Rokas Brazdzionis",
+    "email": "rokas.brazdzionis@visma.com"
+  },
+  "scripts": {
+    "test": "jest --ci",
+    "test:watch": "jest --watchAll"
+  },
+  "main": "./index.js",
+  "dependencies": {},
+  "peerDependencies": {
+    "tailwindcss": ">=2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3",
+    "tailwindcss": "^3.0.23"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

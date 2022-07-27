@@ -10,7 +10,7 @@
   "scripts": {
     "build": "build-npm-workspace",
     "prepare": "husky install",
-    "test": "npm test --workspace=packages --if-present"
+    "test": "npm test --workspaces --if-present"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",

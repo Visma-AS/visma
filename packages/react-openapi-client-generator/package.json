@@ -20,9 +20,6 @@
   "workspaces": [
     "examples/*"
   ],
-  "scripts": {
-    "test": "npm test --workspaces"
-  },
   "dependencies": {
     "@postinumero/use-async": "^0.3.1",
     "axios": "^0.21.1",

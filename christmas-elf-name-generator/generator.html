@@ -1,18 +1,22 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Christmas Elf Name Generator</title><meta name="description" content="With this high-level neural network -assisted Christmas Elf Name Generator, you can now generate your own custom elf name just in time for christmas!"/><link rel="stylesheet" href="/visma/christmas-elf-name-generator/build/_assets/global-OVZZRBLH.css"/></head><body><div class="app"><header><div class="container"><span></span><nav aria-label="Main navigation"><ul><li><a href="/visma/christmas-elf-name-generator">Home</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator">GitHub</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://remix.run/docs">Remix Docs</a></li></ul></nav></div></header><main class="container"><div class="christmas-tree">🎄</div><form><h3>Find out your Christmas Elf Name here!</h3><label><div>Enter your name:</div><input type="text" name="answer" required=""/></label><div><button>Go!</button></div></form></main><footer><p>©<!-- --> <a rel="noopener noreferrer" target="_blank" href="https://visma.com">Visma</a></p></footer></div><script>
-          let STORAGE_KEY = "positions";
-          if (!window.history.state || !window.history.state.key) {
-            window.history.replaceState({ key: Math.random().toString(32).slice(2) }, null);
-          }
-          try {
-            let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY) ?? '{}')
-            let storedY = positions[window.history.state.key];
-            if (typeof storedY === 'number') {
-              window.scrollTo(0, storedY)
-            }
-          } catch(error) {
-            console.error(error)
-            sessionStorage.removeItem(STORAGE_KEY)
-          }
-        </script><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/_shared/chunk-XAB7MZFT.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/root-SPYP23JR.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/_shared/chunk-3AA7GXAR.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-RG3LYAJG.js"/><script>window.__remixContext = {'matches':[{'params':{},'pathname':'/','route':{'id':'root','path':'','module':'/visma/christmas-elf-name-generator/build/root-SPYP23JR.js','hasAction':false,'hasLoader':false,'hasCatchBoundary':false,'hasErrorBoundary':false}},{'params':{},'pathname':'/visma/christmas-elf-name-generator/generator','route':{'id':'routes/visma/christmas-elf-name-generator/generator','parentId':'root','path':'visma/christmas-elf-name-generator/generator','module':'/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-RG3LYAJG.js','imports':['/visma/christmas-elf-name-generator/build/_shared/chunk-3AA7GXAR.js'],'hasAction':false,'hasLoader':false,'hasCatchBoundary':false,'hasErrorBoundary':false}}],'componentDidCatchEmulator':{'trackBoundaries':true,'trackCatchBoundaries':true,'catchBoundaryRouteId':null,'renderBoundaryRouteId':null,'loaderBoundaryRouteId':null,'error':undefined,'catch':undefined},'routeData':{'root':null,'routes/visma/christmas-elf-name-generator/generator':null},'actionData':undefined};</script><script src="/visma/christmas-elf-name-generator/build/manifest-39961CD7.js"></script><script type="module">import * as route0 from "/visma/christmas-elf-name-generator/build/root-SPYP23JR.js";
-import * as route1 from "/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-RG3LYAJG.js";
-window.__remixRouteModules = {"root":route0,"routes/visma/christmas-elf-name-generator/generator":route1};</script><script src="/visma/christmas-elf-name-generator/build/entry.client-5XMGHSOX.js" type="module"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Christmas Elf Name Generator</title><meta content="With this high-level neural network -assisted Christmas Elf Name Generator, you can now generate your own custom elf name just in time for christmas!" name="description"/><link rel="stylesheet" href="/visma/christmas-elf-name-generator/build/_assets/global-OVZZRBLH.css"/></head><body><div class="app"><header><div class="container"><span></span><nav aria-label="Main navigation"><ul><li><a href="/visma/christmas-elf-name-generator">Home</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/Visma-AS/visma/tree/main/packages/christmas-elf-name-generator">GitHub</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://remix.run/docs">Remix Docs</a></li></ul></nav></div></header><main class="container"><div class="christmas-tree">🎄</div><form><h3>Find out your Christmas Elf Name here!</h3><label><div>Enter your name:</div><input name="answer" type="text" required=""/></label><div><button>Go!</button></div></form></main><footer><p>©<!-- --> <a rel="noopener noreferrer" target="_blank" href="https://visma.com">Visma</a></p></footer></div><script>(STORAGE_KEY => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({
+        key
+      }, "");
+    }
+
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "{}");
+      let storedY = positions[window.history.state.key];
+
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(STORAGE_KEY);
+    }
+  })("positions")</script><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/_shared/chunk-DNZTTZUM.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/root-PHRJIEHF.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/_shared/chunk-QISFOXB7.js"/><link rel="modulepreload" href="/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-YRGF6UAD.js"/><script>window.__remixContext = {'actionData':undefined,'appState':{'trackBoundaries':true,'trackCatchBoundaries':true,'catchBoundaryRouteId':null,'renderBoundaryRouteId':null,'loaderBoundaryRouteId':null,'error':undefined,'catch':undefined},'matches':[{'params':{},'pathname':'/','route':{'id':'root','parentId':undefined,'path':'','index':undefined,'caseSensitive':undefined,'module':'/visma/christmas-elf-name-generator/build/root-PHRJIEHF.js','imports':undefined,'hasAction':false,'hasLoader':false,'hasCatchBoundary':false,'hasErrorBoundary':false}},{'params':{},'pathname':'/visma/christmas-elf-name-generator/generator','route':{'id':'routes/visma/christmas-elf-name-generator/generator','parentId':'root','path':'visma/christmas-elf-name-generator/generator','index':undefined,'caseSensitive':undefined,'module':'/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-YRGF6UAD.js','imports':['/visma/christmas-elf-name-generator/build/_shared/chunk-QISFOXB7.js'],'hasAction':false,'hasLoader':false,'hasCatchBoundary':false,'hasErrorBoundary':false}}],'routeData':{}};</script><script src="/visma/christmas-elf-name-generator/build/manifest-518560D5.js"></script><script type="module">import * as route0 from "/visma/christmas-elf-name-generator/build/root-PHRJIEHF.js";
+import * as route1 from "/visma/christmas-elf-name-generator/build/routes/visma/christmas-elf-name-generator/generator-YRGF6UAD.js";
+window.__remixRouteModules = {"root":route0,"routes/visma/christmas-elf-name-generator/generator":route1};</script><script src="/visma/christmas-elf-name-generator/build/entry.client-JSDM4QJB.js" type="module"></script></body></html>

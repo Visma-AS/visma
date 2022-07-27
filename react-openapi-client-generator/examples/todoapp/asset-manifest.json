@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/visma/react-openapi-client-generator/examples/todoapp/static/css/main.e1b2a040.chunk.css",
-    "main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.b656127d.chunk.js",
-    "main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.b656127d.chunk.js.map",
-    "runtime-main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.c58e6c7c.js",
-    "runtime-main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.c58e6c7c.js.map",
-    "static/css/2.1dee6bec.chunk.css": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.1dee6bec.chunk.css",
-    "static/js/2.1088ac8a.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.1088ac8a.chunk.js",
-    "static/js/2.1088ac8a.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.1088ac8a.chunk.js.map",
-    "static/js/3.da960532.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.da960532.chunk.js",
-    "static/js/3.da960532.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.da960532.chunk.js.map",
-    "static/js/4.c1afef6c.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.c1afef6c.chunk.js",
-    "static/js/4.c1afef6c.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.c1afef6c.chunk.js.map",
+    "main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.0e0f2a10.chunk.js",
+    "main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/main.0e0f2a10.chunk.js.map",
+    "runtime-main.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.f0f9c2af.js",
+    "runtime-main.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/runtime-main.f0f9c2af.js.map",
+    "static/css/2.a822724b.chunk.css": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.a822724b.chunk.css",
+    "static/js/2.63620e3f.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.63620e3f.chunk.js",
+    "static/js/2.63620e3f.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.63620e3f.chunk.js.map",
+    "static/js/3.d73865cb.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.d73865cb.chunk.js",
+    "static/js/3.d73865cb.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.d73865cb.chunk.js.map",
+    "static/js/4.09476baf.chunk.js": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.09476baf.chunk.js",
+    "static/js/4.09476baf.chunk.js.map": "/visma/react-openapi-client-generator/examples/todoapp/static/js/4.09476baf.chunk.js.map",
     "index.html": "/visma/react-openapi-client-generator/examples/todoapp/index.html",
-    "static/css/2.1dee6bec.chunk.css.map": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.1dee6bec.chunk.css.map",
+    "static/css/2.a822724b.chunk.css.map": "/visma/react-openapi-client-generator/examples/todoapp/static/css/2.a822724b.chunk.css.map",
     "static/css/main.e1b2a040.chunk.css.map": "/visma/react-openapi-client-generator/examples/todoapp/static/css/main.e1b2a040.chunk.css.map",
-    "static/js/2.1088ac8a.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.1088ac8a.chunk.js.LICENSE.txt",
-    "static/js/3.da960532.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.da960532.chunk.js.LICENSE.txt"
+    "static/js/2.63620e3f.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/2.63620e3f.chunk.js.LICENSE.txt",
+    "static/js/3.d73865cb.chunk.js.LICENSE.txt": "/visma/react-openapi-client-generator/examples/todoapp/static/js/3.d73865cb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c58e6c7c.js",
-    "static/css/2.1dee6bec.chunk.css",
-    "static/js/2.1088ac8a.chunk.js",
+    "static/js/runtime-main.f0f9c2af.js",
+    "static/css/2.a822724b.chunk.css",
+    "static/js/2.63620e3f.chunk.js",
     "static/css/main.e1b2a040.chunk.css",
-    "static/js/main.b656127d.chunk.js"
+    "static/js/main.0e0f2a10.chunk.js"
   ]
 }

@@ -1,5 +1,4 @@
-import * as React from 'react';
-import type { LinksFunction } from 'remix';
+import type { LinksFunction } from '@remix-run/node';
 import {
   Link,
   Links,
@@ -9,7 +8,8 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
-} from 'remix';
+} from '@remix-run/react';
+import * as React from 'react';
 import globalStylesUrl from '~/styles/global.css';
 
 export let links: LinksFunction = () => {

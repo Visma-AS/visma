@@ -1,5 +1,5 @@
-import type { MetaFunction } from 'remix';
-import { Link } from 'remix';
+import type { MetaFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 
 const title = 'Christmas Elf Name Generator';
 const description =

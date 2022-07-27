@@ -35,32 +35,24 @@
       "react-app/jest"
     ]
   },
-  "jest": {
-    "moduleNameMapper": {
-      "^react$": "<rootDir>/../../node_modules/react",
-      "^react/(.*)$": "<rootDir>/../../node_modules/react/$1",
-      "^react-dom$": "<rootDir>/../../node_modules/react-dom",
-      "^react-dom/(.*)$": "<rootDir>/../../node_modules/react-dom/$1"
-    }
-  },
   "dependencies": {
     "@craco/craco": "^6.3.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.3.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.18",
-    "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9",
-    "@types/react-router-dom": "^5.1.8",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.3",
     "@visma/msw-openapi-backend-integration": "^0.1.0",
     "@visma/react-openapi-client-generator": "^0.1.0",
     "clsx": "^1.1.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
     "npm-run-all": "^4.1.5",
-    "react": "^18.0.0-alpha-bdd6d5064-20211001",
-    "react-dom": "^18.0.0-alpha-bdd6d5064-20211001",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-ssr-prepass": "^1.4.0",

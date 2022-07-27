@@ -1,3 +1,8 @@
+# 0.2.2
+
+- Improve finding messages in dependencies
+- Upgrade to `@visma/react-intl-bundled-messages@0.1.5`
+
 # 0.2.1
 
 - Fix infinite recursion when searching for messages. Don't follow symbolic links.

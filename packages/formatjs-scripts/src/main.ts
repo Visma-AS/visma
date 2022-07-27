@@ -6,30 +6,20 @@ import locales from '@visma/react-app-locale-utils/lib/locales.js';
 import target from '@visma/react-intl-bundled-messages/lib/target.js';
 import fg from 'fast-glob';
 import fsExtra from 'fs-extra';
-import { mkdir, writeFile } from 'fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { dirname } from 'node:path';
+import { readPackageUp } from 'read-pkg-up';
 
 const source = 'lang';
 
 async function main() {
   let appDirectory = 'src';
-  let isWorkspace = false;
 
   try {
-    const config = new Function(
-      `const module = {};
-${await fsExtra.readFile('remix.config.js')}
-return module.exports;`
-    )();
-    appDirectory = config.appDirectory ?? 'app';
-  } catch {
-    try {
-      const packageJson = await fsExtra.readJson('../../package.json');
-      if (packageJson.workspaces) {
-        appDirectory = '../*/src';
-        isWorkspace = true;
-      }
-    } catch {}
-  }
+    const { readConfig } = await import('@remix-run/dev/dist/config.js');
+    appDirectory = (await readConfig()).appDirectory;
+  } catch {}
 
   const resultAsString = await extract(
     await fg(`${appDirectory}/**/*.{j,t}s{,x}`),
@@ -49,25 +39,15 @@ return module.exports;`
 
   const pseudoLocales = ['en-XA', 'xx-AC', 'xx-HA', 'xx-LS'];
 
-  const getFiles = async (locale: string) => [
-    ...(await fg(`${source}/${locale}.json`, { followSymbolicLinks: false })),
-    // By a convention, we expect libraries to have pre-translated strings in
-    // lang directory.
-    // https://formatjs.io/docs/guides/distribute-libraries/#declaring-with-a-convention
-    ...(await fg(
-      `${isWorkspace ? '../../' : ''}node_modules/**/${source}/${locale}.json`,
-      { followSymbolicLinks: false }
-    )),
-  ];
-
-  const defaultLocaleFiles = await getFiles(defaultLocale);
+  const dependencyPaths = await getDependencyPaths();
+  const defaultLocaleFiles = getFiles(dependencyPaths, defaultLocale);
 
   for (const locale of locales) {
     const isPseudoLocale = pseudoLocales.includes(locale);
     const files =
       isPseudoLocale || locale === defaultLocale
         ? defaultLocaleFiles
-        : await getFiles(locale);
+        : getFiles(dependencyPaths, locale);
 
     if (files.length) {
       console.log({ locale, isPseudoLocale, files });
@@ -87,3 +67,35 @@ return module.exports;`
 }
 
 main();
+
+// By a convention, we expect libraries to have pre-translated strings in
+// lang directory.
+// https://formatjs.io/docs/guides/distribute-libraries/#declaring-with-a-convention
+const getFiles = (dependencyPaths: string[], locale: string) =>
+  dependencyPaths
+    .map((path) => `${path}/${source}/${locale}.json`)
+    .filter(fsExtra.pathExistsSync);
+
+async function getDependencyPaths() {
+  const dependenciesSet = new Set<string>();
+
+  await (async function recur(relativePath) {
+    const packageUp = await readPackageUp({ cwd: relativePath });
+    if (packageUp) {
+      const { path, packageJson } = packageUp;
+      const require = createRequire(`file://${dirname(path)}`);
+      if (!dependenciesSet.has(path)) {
+        dependenciesSet.add(path);
+        const dependencies = Object.keys(packageJson.dependencies ?? []);
+        for (const dependency of dependencies) {
+          try {
+            const path = require.resolve(dependency);
+            await recur(path);
+          } catch {}
+        }
+      }
+    }
+  })(process.cwd());
+
+  return [...dependenciesSet].map((path) => dirname(path));
+}

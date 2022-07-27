@@ -1,0 +1,63 @@
+{
+  "name": "@visma/vite-plugin-super-template",
+  "version": "0.1.0",
+  "description": "Vite plugin for super-template.",
+  "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/vite-plugin-super-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Visma-AS/visma.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno.saine@visma.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/main.js",
+      "require": "./lib/cjs/main.js",
+      "default": "./lib/main.js"
+    },
+    "./lib": {
+      "import": "./lib/main.js",
+      "require": "./lib/cjs/main.js",
+      "default": "./lib/main.js"
+    },
+    "./lib/*": {
+      "import": "./lib/*",
+      "require": "./lib/cjs/*",
+      "default": "./lib/*"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "require": "./lib/cjs/*.js",
+      "default": "./lib/*.js"
+    }
+  },
+  "types": "./lib/main.d.ts",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc && tsc --module commonjs --outDir lib/cjs && echo \"{}\" > lib/cjs/package.json",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@visma/babel-preset-formatjs": "^0.1.0",
+    "@visma/react-intl-bundled-messages": "^0.1.5",
+    "@vitejs/plugin-react": "^1.3.0",
+    "babel-plugin-codegen": "^4.1.5",
+    "vite-plugin-dynamic-import": "^1.0.0",
+    "vite-plugin-env-compatible": "^1.1.1"
+  },
+  "devDependencies": {
+    "@visma/tsconfig": "^0.2.1",
+    "typescript": "^4.5.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

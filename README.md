@@ -12,6 +12,7 @@ Contributions are welcome!
 
 - [@visma/babel-preset-formatjs](/packages/babel-preset-formatjs) – [babel-plugin-formatjs](https://formatjs.io/docs/tooling/babel-plugin/) with `removeDefaultMessage` set `true` in production
 - [@visma/craco-plugin-super-template](/packages/craco-plugin-super-template) – [CRACO](https://github.com/gsoft-inc/craco) plugin for [@visma/cra-template-craco-super-template](/packages/cra-template-craco-super-template)
+- [@visma/vite-plugin-super-template](/packages/vite-plugin-super-template) – [Vite](https://vitejs.dev/) plugin for super-template
 
 ### Templates
 

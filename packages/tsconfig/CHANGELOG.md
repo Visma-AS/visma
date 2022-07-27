@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Add option `skipLibCheck`: `true`
+
 # 0.2.0
 
 - Remove option `skipLibCheck`: `true`

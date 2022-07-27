@@ -1,3 +1,7 @@
+# 0.1.5
+
+- Upgrade to `@visma/formatjs-scripts@0.2.0`
+
 # 0.1.4
 
 - Overwrite API schema `server.url` with `config.backend.baseURL`

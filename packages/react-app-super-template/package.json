@@ -1,7 +1,7 @@
 {
   "name": "@visma/react-app-super-template",
-  "version": "0.1.4",
-  "description": "`AppProvider` for @visma/cra-template-craco-super-template.",
+  "version": "0.1.5",
+  "description": "`AppProvider` for super-template.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-super-template",
   "repository": {
     "type": "git",

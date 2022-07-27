@@ -4,7 +4,7 @@ const [, , useLocaleMessagesSafe] = create(
   (locale: string) =>
     import(
       /* webpackChunkName: "compiled-lang.[request]" */
-      `.compiled-lang/${locale}`
+      `.compiled-lang/${locale}.json`
     )
 );
 

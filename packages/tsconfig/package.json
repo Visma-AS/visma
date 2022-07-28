@@ -1,7 +1,7 @@
 {
   "name": "@visma/tsconfig",
-  "version": "0.2.1",
-  "description": "TSConfig, mainly for this repository.",
+  "version": "1.0.0",
+  "description": "Shared base TSConfigs.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/tsconfig",
   "repository": {
     "type": "git",

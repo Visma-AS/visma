@@ -1,0 +1,16 @@
+{
+  "name": "@visma/eslint-config-super-template",
+  "version": "0.1.0",
+  "description": "ESLint configuration for super-template.",
+  "main": "index.js",
+  "dependencies": {
+    "@remix-run/eslint-config": "^1.6.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-formatjs": "^4.1.0",
+    "eslint-plugin-no-loops": "^0.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}

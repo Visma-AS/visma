@@ -4,5 +4,5 @@
     "outDir": "lib",
     "rootDir": "src"
   },
-  "include": ["src/"]
+  "include": ["../public.config/src/types/index.d.ts", "src/"]
 }

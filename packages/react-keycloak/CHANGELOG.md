@@ -1,3 +1,7 @@
+# 1.0.0
+
+- **Breaking:** Upgrade to `@visma/public.config@1.0.0`
+
 # 0.1.3
 
 - Add Mock Provider

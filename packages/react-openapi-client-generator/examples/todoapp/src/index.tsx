@@ -8,7 +8,7 @@ import App from './App';
 async function main() {
   // if (
   //   process.env.NODE_ENV === 'development' &&
-  //   process.env.REACT_APP_MOCK === 'msw'
+  //   globalThis.ENV.MOCK === 'msw'
   // ) {
   if (
     window.location.pathname === homepage &&

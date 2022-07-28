@@ -1,6 +1,6 @@
 # @visma/tsconfig
 
-TSConfig, mainly for this repository.
+Shared base TSConfigs.
 
 ## Usage
 

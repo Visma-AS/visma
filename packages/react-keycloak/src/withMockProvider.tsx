@@ -5,7 +5,7 @@ import type { Props, Provider } from './index.js';
 
 const ContextProvider = reactKeycloakWebContext.Provider;
 
-type MockUser = {
+export type MockUser = {
   realm_access: { roles: string[] };
   resource_access: { [resource: string]: { roles: string[] } };
 };
@@ -15,9 +15,9 @@ export interface PropsWithChildren extends Props {
   children: JSX.Element;
 }
 
-export default process.env.REACT_APP_KEYCLOAK_MOCK_USER
+export default globalThis.ENV?.KEYCLOAK_MOCK_USER
   ? function withMockProvider(): Provider {
-      const mockUser = JSON.parse(process.env.REACT_APP_KEYCLOAK_MOCK_USER!);
+      const mockUser = globalThis.ENV!.KEYCLOAK_MOCK_USER!;
 
       function useAuthClientMock({
         user: { realm_access, resource_access, ...idTokenParsed },

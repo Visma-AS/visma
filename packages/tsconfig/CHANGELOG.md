@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Add `base.json`, `react-app-vite.json` & `react-library.json` configs
+
 # 0.2.1
 
 - Add option `skipLibCheck`: `true`

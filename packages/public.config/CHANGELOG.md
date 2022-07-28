@@ -1,3 +1,8 @@
+# 1.0.0
+
+- **Breaking:** Reading `<root>/public.config.json` and use of Webpack alias are removed. Use `.env` for build time values.
+- **Breaking:** `@visma/public.config` no longer exports the config. Read values from `globalThis.ENV`.
+
 # 0.1.1
 
 - Fix build

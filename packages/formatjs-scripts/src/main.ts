@@ -22,7 +22,7 @@ async function main() {
   } catch {}
 
   const resultAsString = await extract(
-    await fg(`${appDirectory}/**/*.{j,t}s{,x}`),
+    await fg([`${appDirectory}/**/*.{j,t}s{,x}`, `!**/*.d.ts`]),
     {
       idInterpolationPattern: '[sha512:contenthash:base64:6]',
     }

@@ -2,7 +2,7 @@
 
 - Add CommonJS exports
 - Include `src` files for source maps
-- Add `"types"` field
+- Add `"types"` field to `package.json`
 - Add `.json` file extension to `compiled-lang` dynamic imports
 
 # 0.1.4

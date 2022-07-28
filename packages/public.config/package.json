@@ -1,7 +1,7 @@
 {
   "name": "@visma/public.config",
-  "version": "0.1.1",
-  "description": "Runtime and build time configs by hostname.",
+  "version": "1.0.0",
+  "description": "Public build, deploy & runtime configs in globalThis.ENV, dynamic by hostname.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/public.config",
   "repository": {
     "type": "git",
@@ -14,21 +14,41 @@
   },
   "type": "module",
   "exports": {
-    ".": "./lib/main.js",
-    "./lib": "./lib/main.js",
-    "./lib/*": "./lib/*",
-    "./*": "./lib/*.js"
+    ".": {
+      "import": "./lib/esm.main.js",
+      "require": "./lib/cjs/cjs.main.js",
+      "default": "./lib/esm.main.js"
+    },
+    "./lib": {
+      "import": "./lib/esm.main.js",
+      "require": "./lib/cjs/cjs.main.js",
+      "default": "./lib/esm.main.js"
+    },
+    "./lib/*": {
+      "import": "./lib/esm.*",
+      "require": "./lib/cjs/cjs.*",
+      "default": "./lib/esm.*"
+    },
+    "./*": {
+      "import": "./lib/esm.*.js",
+      "require": "./lib/cjs/cjs.*.js",
+      "default": "./lib/esm.*.js"
+    }
   },
-  "main": "./lib/main.js",
+  "main": "./lib/esm.main.js",
+  "types": "./lib/esm.main.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json && echo \"{}\" > lib/cjs/package.json",
     "start": "tsc --watch"
   },
   "dependencies": {
     "axios": "^0.22.0",
+    "deepmerge-json": "^1.5.0",
+    "dotenv": "^16.0.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

@@ -1,6 +1,10 @@
+# 0.2.3
+
+- Ignore `*.d.ts` files when searching for messages
+
 # 0.2.2
 
-- Improve finding messages in dependencies
+- Improve searching messages in dependencies
 - Upgrade to `@visma/react-intl-bundled-messages@0.1.5`
 
 # 0.2.1

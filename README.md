@@ -31,7 +31,7 @@ Contributions are welcome!
 
 - [@visma/msw-openapi-backend-integration](/packages/msw-openapi-backend-integration) – Helper to integrate [Mock Service Worker](https://mswjs.io/) with [OpenAPI Backend](https://github.com/anttiviljami/openapi-backend)
 - [@visma/react-app-locale-utils](/packages/react-app-locale-utils) – Locale state, display names, date-fns, MUI and other locale utilities
-- [@visma/react-app-super-template](/packages/react-app-super-template) – `AppProvider` super-template
+- [@visma/react-app-super-template](/packages/react-app-super-template) – `AppProvider` for super-template
 - [@visma/react-intl-bundled-messages](/packages/react-intl-bundled-messages) – [`IntlProvider`](https://formatjs.io/docs/react-intl/components/) that lazy loads messages in [current language](/packages/react-app-locale-utils#usage) in Webpack environment
 - [@visma/react-keycloak](/packages/react-keycloak) – Keycloak helper components, hooks, etc.
 - [@visma/tailwindcss-vud](/packages/tailwindcss-vud) – [Visma Unified Design](https://ux.visma.com/guidelines-resources/) theme configuration for [tailwindcss](https://tailwindcss.com)
@@ -39,8 +39,9 @@ Contributions are welcome!
 
 ### Configs
 
-- [@visma/public.config](/packages/public.config) – Runtime and build time configs by hostname
-- [@visma/tsconfig](/packages/tsconfig) – TSConfig, mainly for this repository
+- [@visma/eslint-config-super-template](/packages/eslint-config-super-template) – ESLint configuration for super-template
+- [@visma/public.config](/packages/public.config) – Public build, deploy & runtime configs in `globalThis.ENV`, dynamic by hostname
+- [@visma/tsconfig](/packages/tsconfig) – Shared base TSConfigs
 
 ## How to add a new package?
 

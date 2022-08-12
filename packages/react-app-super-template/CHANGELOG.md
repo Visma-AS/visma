@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Upgrade to `@visma/react-intl-bundled-messages@^1.0.0`
+
 # 1.1.0
 
 - Upgrade to `@visma/formatjs-scripts@^1.0.0`

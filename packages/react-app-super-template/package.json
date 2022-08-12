@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-app-super-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "`AppProvider` for super-template.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-super-template",
   "repository": {
@@ -31,7 +31,7 @@
     "@postinumero/use-async": "^0.3.2",
     "@visma/formatjs-scripts": "^1.0.0",
     "@visma/msw-openapi-backend-integration": "^0.1.2",
-    "@visma/react-intl-bundled-messages": "^0.1.1",
+    "@visma/react-intl-bundled-messages": "^1.0.0",
     "@visma/react-keycloak": "^1.0.0",
     "@visma/react-openapi-client-generator": "^1.0.0",
     "lodash": "^4.17.21",

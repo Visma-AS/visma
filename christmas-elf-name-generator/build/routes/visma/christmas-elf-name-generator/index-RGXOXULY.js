@@ -1,1 +1,0 @@
-import{a as t,b as a}from"/visma/christmas-elf-name-generator/build/_shared/chunk-QISFOXB7.js";import{e}from"/visma/christmas-elf-name-generator/build/_shared/chunk-DNZTTZUM.js";e();export{a as default,t as meta};

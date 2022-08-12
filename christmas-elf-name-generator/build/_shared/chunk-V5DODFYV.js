@@ -24,7 +24,7 @@ window.__remixRouteModules = {${n.map((y,v)=>`${JSON.stringify(y.route.id)}:rout
  * LICENSE file in the root directory of this source tree.
  */
 /**
- * @remix-run/react v1.6.5
+ * @remix-run/react v1.6.7
  *
  * Copyright (c) Remix Software Inc.
  *

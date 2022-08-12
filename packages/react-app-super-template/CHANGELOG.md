@@ -1,3 +1,9 @@
+# 1.1.0
+
+- Upgrade to `@visma/formatjs-scripts@^1.0.0`
+- Upgrade to `@visma/react-keycloak@^1.0.0`
+- Upgrade to `@visma/react-openapi-client-generator@^1.0.0`
+
 # 1.0.0
 
 - **Breaking:** Use project alias `@` to import api schema

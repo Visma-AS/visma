@@ -1,5 +1,5 @@
 // @codegen
-require('dotenv/config');
+require('@visma/public.config/config');
 const fg = require('fast-glob');
 const path = require('path');
 const uniq = require('lodash/uniq');
@@ -11,7 +11,7 @@ const availableLocales = fg
 
 const fallback = 'en-US';
 
-const dateFnsLocales = JSON.parse(process.env.REACT_APP_LOCALES).reduce(
+const dateFnsLocales = (globalThis.ENV?.LOCALES ?? []).reduce(
   (dateFnsLocales, locale) => {
     const primary = locale;
     const [lang] = locale.split('-');

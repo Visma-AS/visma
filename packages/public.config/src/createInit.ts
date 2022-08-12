@@ -1,5 +1,5 @@
-import { mapKeys, mapValues } from 'lodash';
 import merge from 'deepmerge-json';
+import { mapKeys, mapValues } from 'lodash-es';
 
 type Config = Record<string, any>;
 type Hostname = string;
@@ -29,7 +29,9 @@ const overrides = ([
 ];
 
 const toConfigByHostname = (config: ConfigOption): ConfigByHostname =>
-  Array.isArray(config) ? config : [globalThis.location.hostname, config];
+  Array.isArray(config)
+    ? config
+    : [globalThis.location?.hostname ?? '', config];
 
 const hostnameSafe = (hostname: Hostname) => `.${hostname}`;
 
@@ -69,7 +71,7 @@ const jsonParseSafe = ([
   }),
 ];
 
-const currentHostnameSafe = hostnameSafe(globalThis.location.hostname);
+const currentHostnameSafe = hostnameSafe(globalThis.location?.hostname ?? '');
 
 export default function createInit(configs: ConfigOption[]) {
   return function init(options?: Options) {

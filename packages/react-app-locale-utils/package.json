@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-app-locale-utils",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Locale state, display names, date-fns, MUI and other locale utilities.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-app-locale-utils",
   "repository": {
@@ -41,6 +41,9 @@
     "@mui/material": "^5.0.2",
     "date-fns": "^2.24.0",
     "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@visma/public.config": "^1.0.0"
   },
   "publishConfig": {
     "access": "public",

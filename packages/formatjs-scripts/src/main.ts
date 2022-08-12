@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import { compile, extract } from '@formatjs/cli';
+import type { PseudoLocale } from '@formatjs/cli/src/compile';
 import defaultLocale from '@visma/react-app-locale-utils/lib/defaultLocale.js';
 import locales from '@visma/react-app-locale-utils/lib/locales.js';
 import target from '@visma/react-intl-bundled-messages/lib/target.js';
@@ -40,7 +41,9 @@ async function main() {
   const pseudoLocales = ['en-XA', 'xx-AC', 'xx-HA', 'xx-LS'];
 
   const dependencyPaths = await getDependencyPaths();
-  const defaultLocaleFiles = getFiles(dependencyPaths, defaultLocale);
+  const defaultLocaleFiles = defaultLocale
+    ? getFiles(dependencyPaths, defaultLocale)
+    : [];
 
   for (const locale of locales) {
     const isPseudoLocale = pseudoLocales.includes(locale);
@@ -54,7 +57,7 @@ async function main() {
 
       const result = await compile(files, {
         ast: true,
-        pseudoLocale: isPseudoLocale ? locale : undefined,
+        pseudoLocale: isPseudoLocale ? (locale as PseudoLocale) : undefined,
       });
 
       await writeFile(`${target}/${locale}.json`, result);

@@ -1,3 +1,8 @@
+# 1.0.0
+
+- Upgrade to `openapi-client-axios@^5.1.2`
+- Upgrade to `openapi-client-axios-typegen@^5.0.2`
+
 # 0.1.6
 
 - Add `--add-loaders` option to include the API schema in the bundle

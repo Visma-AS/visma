@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Set `@visma/public.config@^1.0.0` as a peer dependency
+
 # 0.2.1
 
 - Fix import paths

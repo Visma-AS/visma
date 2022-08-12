@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Upgrade to `@visma/react-app-locale-utils@^1.0.0`
+
 # 0.1.5
 
 - Add CommonJS exports

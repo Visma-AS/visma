@@ -1,3 +1,9 @@
+# 1.0.0
+
+- Upgrade to `@visma/react-app-locale-utils@^1.0.0`
+- Upgrade to `@visma/react-intl-bundled-messages@^1.0.0`
+- Set `@visma/public.config@^1.0.1` as a peer dependency
+
 # 0.2.3
 
 - Ignore `*.d.ts` files when searching for messages

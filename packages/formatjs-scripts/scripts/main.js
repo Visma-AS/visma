@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-import 'dotenv/config';
+import '@visma/public.config/config';
 import '../lib/main.js';

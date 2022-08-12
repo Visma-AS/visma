@@ -1,3 +1,8 @@
+# 1.0.1
+
+- Fix unavailable `location` issue in Node.js
+- Switch to `lodash-es`
+
 # 1.0.0
 
 - **Breaking:** Reading `<root>/public.config.json` and use of Webpack alias are removed. Use `.env` for build time values.

@@ -1,3 +1,7 @@
+# 1.0.2
+
+- Fix deduping `axios`. Accept wider range of versions.
+
 # 1.0.1
 
 - Fix unavailable `location` issue in Node.js

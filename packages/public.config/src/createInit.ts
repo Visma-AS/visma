@@ -1,5 +1,12 @@
 import * as merge from 'deepmerge-json';
-import { mapKeys, mapValues } from 'lodash';
+
+const objectMap = <FromValue, ToValue>(
+  obj: { [key: string]: FromValue },
+  fn: (
+    [key, value]: [key: string, value: FromValue],
+    index: number
+  ) => [string, ToValue]
+) => Object.fromEntries(Object.entries(obj).map(fn));
 
 type Config = Record<string, any>;
 type Hostname = string;
@@ -51,9 +58,9 @@ const withoutPrefix =
   ([hostname, config]: ConfigByHostname): ConfigByHostname =>
     [
       hostname,
-      mapKeys(config, (_value, key) => {
+      objectMap(config, ([key, value]) => {
         const prefix = prefixes.find((prefix) => key.startsWith(prefix));
-        return prefix ? key.slice(prefix.length) : key;
+        return [prefix ? key.slice(prefix.length) : key, value];
       }),
     ];
 
@@ -62,11 +69,11 @@ const jsonParseSafe = ([
   config,
 ]: ConfigByHostname): ConfigByHostname => [
   hostname,
-  mapValues(config, (value) => {
+  objectMap(config, ([key, value]) => {
     try {
-      return JSON.parse(value!);
+      return [key, JSON.parse(value!)];
     } catch {
-      return value;
+      return [key, value];
     }
   }),
 ];

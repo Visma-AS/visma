@@ -1,6 +1,6 @@
 {
   "name": "@visma/public.config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Public build, deploy & runtime configs in globalThis.ENV, dynamic by hostname.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/public.config",
   "repository": {
@@ -48,8 +48,7 @@
   "dependencies": {
     "axios": ">=0.25 <1 || ^1.0.0",
     "deepmerge-json": "^1.5.0",
-    "dotenv": "^16.0.1",
-    "lodash": "^4.17.21"
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",

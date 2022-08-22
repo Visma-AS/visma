@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Fix ESM issue
+
 # 1.0.3
 
 - Fix CommonJS issue: Switch to `lodash`

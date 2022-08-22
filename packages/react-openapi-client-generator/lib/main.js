@@ -47,8 +47,8 @@ const loaders = ['', 'json-loader', isYaml && 'yaml-loader', ''].filter(
 );
 
 const content = `${imports}
-import { Document } from 'openapi-client-axios';
-import OpenAPIClientAxios from 'openapi-client-axios';
+import type { Document } from 'openapi-client-axios';
+import { OpenAPIClientAxios } from 'openapi-client-axios';
 import { create } from '@postinumero/use-async';${
   addLoaders
     ? `

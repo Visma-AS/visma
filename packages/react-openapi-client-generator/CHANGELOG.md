@@ -1,3 +1,7 @@
+# 1.0.1
+
+- Fix `Uncaught TypeError: import_openapi_client_axios.default is not a constructor` in Vite
+
 # 1.0.0
 
 - Upgrade to `openapi-client-axios@^5.1.2`

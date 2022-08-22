@@ -52,7 +52,7 @@ The browser should receive something like from the server:
 ...
 ```
 
-Alternatively load config at runtime, before importing other modules:
+Alternatively, load config at runtime before importing other modules:
 
 ```js
 import loadRuntimeConfig from '@visma/public.config/lib/loadRuntimeConfig.js';

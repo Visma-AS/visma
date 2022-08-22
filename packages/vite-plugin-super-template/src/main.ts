@@ -1,10 +1,13 @@
+import dateFnsLocaleVitePlugin from '@visma/react-app-locale-utils/lib/dateFnsLocaleVitePlugin.js';
+import reactIntlBundledMessagesPlugin from '@visma/react-intl-bundled-messages/lib/vitePlugin.js';
 import react from '@vitejs/plugin-react';
 import dynamicImport from 'vite-plugin-dynamic-import';
 import envCompatible from 'vite-plugin-env-compatible';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import craLikePlugin from './craLikePlugin.js';
+import defaultExport from './defaultExport.js';
+import gitInfoPlugin from './gitInfoPlugin.js';
 import projectAliasPlugin from './projectAliasPlugin.js';
-import reactIntlBundledMessagesAliasPlugin from './reactIntlBundledMessagesPlugin.js';
 
 export const defaultOptions = {
   envCompatible: {
@@ -26,12 +29,16 @@ interface Options {
 
 export default function superTemplate(options?: Options) {
   return [
-    projectAliasPlugin,
     craLikePlugin,
-    dynamicImport(options?.dynamicImport),
-    envCompatible(options?.envCompatible ?? defaultOptions.envCompatible),
+    dateFnsLocaleVitePlugin,
+    defaultExport(dynamicImport)(options?.dynamicImport),
+    defaultExport(envCompatible)(
+      options?.envCompatible ?? defaultOptions.envCompatible
+    ),
+    gitInfoPlugin,
+    projectAliasPlugin,
     react(options?.react ?? defaultOptions.react),
-    reactIntlBundledMessagesAliasPlugin,
+    reactIntlBundledMessagesPlugin,
     tsconfigPaths(),
   ];
 }

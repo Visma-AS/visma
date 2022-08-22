@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-intl-bundled-messages",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "`IntlProvider` that lazy loads messages in current language in Webpack environment.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-intl-bundled-messages",
   "repository": {
@@ -14,34 +14,19 @@
   },
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/cjs/index.js",
-      "default": "./lib/index.js"
-    },
-    "./lib": {
-      "import": "./lib/index.js",
-      "require": "./lib/cjs/index.js",
-      "default": "./lib/index.js"
-    },
-    "./lib/*": {
-      "import": "./lib/*",
-      "require": "./lib/cjs/*",
-      "default": "./lib/*"
-    },
-    "./*": {
-      "import": "./lib/*.js",
-      "require": "./lib/cjs/*.js",
-      "default": "./lib/*.js"
-    }
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/*": "./lib/*",
+    "./*": "./lib/*.js"
   },
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "src",
     "lib"
   ],
   "scripts": {
-    "build": "tsc && tsc --module commonjs --outDir lib/cjs && echo \"{}\" > lib/cjs/package.json",
+    "build": "tsc",
     "start": "tsc --watch"
   },
   "dependencies": {

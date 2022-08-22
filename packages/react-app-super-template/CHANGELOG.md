@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Fix production build: patch `Buffer`, `EventsEventEmitter` & `process`
+
 # 1.1.1
 
 - Upgrade to `@visma/react-intl-bundled-messages@^1.0.0`

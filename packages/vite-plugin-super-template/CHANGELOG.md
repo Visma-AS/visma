@@ -1,3 +1,10 @@
+# 0.1.3
+
+- Fix production build
+- Add `@visma/vite-plugin-super-template-git-info` (internal)
+- Upgrade to `@visma/react-intl-bundled-messages@^1.1.0`
+- Upgrade to `@vitejs/plugin-react@^2.0.1`
+
 # 0.1.2
 
 - Upgrade to `@visma/react-intl-bundled-messages@^1.0.0`

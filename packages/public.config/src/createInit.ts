@@ -1,5 +1,5 @@
-import merge from 'deepmerge-json';
-import { mapKeys, mapValues } from 'lodash-es';
+import * as merge from 'deepmerge-json';
+import { mapKeys, mapValues } from 'lodash';
 
 type Config = Record<string, any>;
 type Hostname = string;
@@ -93,6 +93,13 @@ export default function createInit(configs: ConfigOption[]) {
       .flatMap(overrides)
       .filter(matchCurrentHostname)
       .map(config)
-      .reduce((config, overrides) => merge(config, overrides), {});
+      .reduce(
+        (config, overrides) =>
+          (typeof merge === 'function' ? merge : merge.default)(
+            config,
+            overrides
+          ),
+        {}
+      );
   };
 }

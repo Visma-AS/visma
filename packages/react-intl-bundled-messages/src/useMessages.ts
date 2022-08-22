@@ -1,25 +1,22 @@
 import { create } from '@postinumero/use-async';
+import messagesDynamicImports from '@visma/vite-plugin-react-intl-bundled-messages/dynamic-import-messages';
 
-const [, , useLocaleMessagesSafe] = create(
-  (locale: string) =>
-    import(
-      /* webpackChunkName: "compiled-lang.[request]" */
-      `.compiled-lang/${locale}.json`
-    )
+const [, , useImportMessagesSafe] = create(
+  (locale: string) => messagesDynamicImports[locale]?.() ?? Promise.resolve()
 );
 
 export default function useMessages({
   locale,
-  defaultLocale,
+  defaultLocale = locale,
 }: {
   locale: string;
-  defaultLocale: string;
+  defaultLocale?: string;
 }) {
-  const [, defaultMessages] = useLocaleMessagesSafe(defaultLocale);
-  const [, messages] = useLocaleMessagesSafe(locale);
+  const [, defaultMessages] = useImportMessagesSafe(defaultLocale);
+  const [, messages] = useImportMessagesSafe(locale);
 
   return {
-    ...defaultMessages,
-    ...messages,
+    ...defaultMessages?.default,
+    ...messages?.default,
   };
 }

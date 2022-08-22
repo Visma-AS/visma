@@ -3,9 +3,20 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ES2015"],
     "module": "ESNext",
-    "target": "ES6",
-    "jsx": "react-jsx"
+    "plugins": [
+      {
+        "transform": "@formatjs/ts-transformer",
+        "import": "transform",
+        "type": "config",
+        "overrideIdFn": "[sha512:contenthash:base64:6]",
+        "_removeDefaultMessage": true,
+        "ast": true
+      }
+    ],
+    "sourceMap": true,
+    "target": "ES6"
   }
 }

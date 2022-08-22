@@ -1,5 +1,10 @@
+# 1.1.0
+
+- Add `@visma/vite-plugin-date-fns-locale` (internal)
+
 # 1.0.0
 
+- **Breaking:** Switch to Vite. Remove support of `useDateFnsLocale` in CRACO.
 - Set `@visma/public.config@^1.0.0` as a peer dependency
 
 # 0.2.1

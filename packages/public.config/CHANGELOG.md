@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Fix CommonJS issue: Switch to `lodash`
+
 # 1.0.2
 
 - Fix deduping `axios`. Accept wider range of versions.

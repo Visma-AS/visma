@@ -8,7 +8,7 @@ Locale state, display names, date-fns, MUI and other locale utilities.
 
 ```sh
 # Available locales, first is the default locale
-REACT_APP_LOCALES=["da-DK","en-US","es-ES","fi-FI","lt-LT","lv-LV","nb-NO","nl-NL","ro-RO","sv-SE","en-XA"]
+VITE_LOCALES=["da-DK","en-US","es-ES","fi-FI","lt-LT","lv-LV","nb-NO","nl-NL","ro-RO","sv-SE","en-XA"]
 ```
 
 ### `useLocale`
@@ -22,7 +22,7 @@ const [lang] = locale.split('-');
 
 ### `useDateFnsLocale`
 
-Requires [`babel-plugin-codegen`](https://github.com/kentcdodds/babel-plugin-codegen).
+Requires use of `dateFnsLocaleVitePlugin` from `@visma/react-app-locale-utils/lib/dateFnsLocaleVitePlugin.js`.
 
 ```js
 import { formatRelative, subDays } from 'date-fns';

@@ -1,3 +1,8 @@
+# 1.1.0
+
+- Add `@formatjs/ts-transformer` to `react-library.json`
+- Set `jsx` mode to `react-jsx` in `react-library.json`
+
 # 1.0.0
 
 - Add `base.json`, `react-app-vite.json` & `react-library.json` configs

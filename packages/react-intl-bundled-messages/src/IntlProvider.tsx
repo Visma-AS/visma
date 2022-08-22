@@ -6,15 +6,13 @@ import useMessages from './useMessages.js';
 
 export default function IntlProvider({
   locale,
-  defaultLocale = defaultLocaleValue,
+  defaultLocale,
   messages,
   ...otherProps
-}: {
-  locale?: string;
-  [otherOptions: string]: any;
-}) {
+}: Partial<ReactIntlProvider['props']>) {
   const [localeSetting] = useLocale();
-  locale = locale ?? (localeSetting as string);
+  defaultLocale ??= defaultLocaleValue;
+  locale ??= (localeSetting as string) ?? defaultLocale;
 
   return (
     <ReactIntlProvider

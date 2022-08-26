@@ -1,3 +1,7 @@
+# 0.1.4
+
+- Add `vite-plugin-dynamic-base`
+
 # 0.1.3
 
 - Fix production build

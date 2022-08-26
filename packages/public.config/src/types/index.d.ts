@@ -5,6 +5,7 @@ declare global {
     BACKEND?: {
       baseURL?: string;
     };
+    BASENAME?: string;
     GIT_AUTHOR_DATE?: string;
     GIT_VERSION?: string;
     KEYCLOAK: Parameters<typeof Keycloak>[0];

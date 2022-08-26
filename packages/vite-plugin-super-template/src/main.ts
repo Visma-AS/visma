@@ -6,6 +6,7 @@ import envCompatible from 'vite-plugin-env-compatible';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import craLikePlugin from './craLikePlugin.js';
 import defaultExport from './defaultExport.js';
+import dynamicBase from './dynamicBase.js';
 import gitInfoPlugin from './gitInfoPlugin.js';
 import projectAliasPlugin from './projectAliasPlugin.js';
 
@@ -32,6 +33,7 @@ export default function superTemplate(options?: Options) {
     craLikePlugin,
     dateFnsLocaleVitePlugin,
     defaultExport(dynamicImport)(options?.dynamicImport),
+    dynamicBase,
     defaultExport(envCompatible)(
       options?.envCompatible ?? defaultOptions.envCompatible
     ),

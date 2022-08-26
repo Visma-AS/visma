@@ -1,3 +1,8 @@
+# 1.0.0
+
+- Upgrade to `msw@^0.45.0`
+- Upgrade to `openapi-backend@^5.3.0`
+
 # 0.1.2
 
 - Fix ES module usage

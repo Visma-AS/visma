@@ -1,3 +1,7 @@
+# 1.1.3
+
+- Upgrade to `@visma/msw-openapi-backend-integration@^1.0.0`
+
 # 1.1.2
 
 - Fix production build: patch `Buffer`, `EventsEventEmitter` & `process`

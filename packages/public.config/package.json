@@ -1,6 +1,6 @@
 {
   "name": "@visma/public.config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Public build, deploy & runtime configs in globalThis.ENV, dynamic by hostname.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/public.config",
   "repository": {

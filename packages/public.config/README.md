@@ -25,13 +25,13 @@ REACT_APP_HELLO=world
 
 ## Deploy time & runtime configs
 
-Write values in `globalThis.ENV` in a `<script>` tag before the any other script tags. These values will override any build time values set in `.env`. Example:
+Write values in `window.ENV` in a `<script>` tag before the any other script tags. These values will override any build time values set in `.env`. Example:
 
 ```js
 html.replace(
   '<!-- overrides placeholder -->',
   `<script>
-globalThis.ENV = ${JSON.stringify(data)};
+window.ENV = ${JSON.stringify(data)};
 </script>`
 );
 ```
@@ -43,7 +43,7 @@ The browser should receive something like from the server:
 <body>
   <div id="root"></div>
   <script>
-    globalThis.ENV = {
+    window.ENV = {
       HELLO: 'world',
     };
   </script>
@@ -103,24 +103,24 @@ A special `HOSTNAME_OVERRIDES` variable can be used to override values at runtim
 ```json
 VITE_HOSTNAME_OVERRIDES=[
   {
-    "backend": { "baseURL": "http://localhost:8080" }
+    "BACKEND": { "baseURL": "http://localhost:8080" }
   },
   [
     "example.com",
     {
-      "backend": { "baseURL": "https://api.example.com" }
+      "BACKEND": { "baseURL": "https://api.example.com" }
     }
   ],
   [
     "test.example.com",
     {
-      "backend": { "baseURL": "https://api.test.example.com" }
+      "BACKEND": { "baseURL": "https://api.test.example.com" }
     }
   ]
 ]
 ```
 
-| Hostname             | `globalThis.ENV.backend.baseURL` |
+| Hostname             | `globalThis.ENV.BACKEND.baseURL` |
 | -------------------- | -------------------------------- |
 | `"example.com"`      | `"https://api.example.com"`      |
 | `"test.example.com"` | `"https://api.test.example.com"` |

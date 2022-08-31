@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Fix Vite build if `date-fns` is not available
+
 # 1.1.0
 
 - Add `@visma/vite-plugin-date-fns-locale` (internal)

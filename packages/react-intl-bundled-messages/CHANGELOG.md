@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Fix Vite build if `.compiled-lang` path is not available
+
 # 1.1.0
 
 - Add `@visma/vite-plugin-react-intl-bundled-messages` (internal)

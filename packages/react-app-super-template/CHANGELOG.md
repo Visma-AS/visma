@@ -1,3 +1,8 @@
+# 1.2.0
+
+- Update `document.lang` on locale change
+- Include `src` files for source maps
+
 # 1.1.3
 
 - Upgrade to `@visma/msw-openapi-backend-integration@^1.0.0`

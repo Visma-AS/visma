@@ -9,10 +9,18 @@ import type { Plugin } from 'vite';
 
 const require = createRequire(import.meta.url);
 
-const localeDir = path.dirname(require.resolve('date-fns/locale'));
-const availableLocales = fg
-  .sync(`${localeDir}/*`, { onlyDirectories: true })
-  .map((localePath) => path.basename(localePath));
+function getAvailableLocales() {
+  try {
+    const localeDir = path.dirname(require.resolve('date-fns/locale'));
+    return fg
+      .sync(`${localeDir}/*`, { onlyDirectories: true })
+      .map((localePath) => path.basename(localePath));
+  } catch {
+    return [];
+  }
+}
+
+const availableLocales = getAvailableLocales();
 
 const fallback = globalThis.ENV?.LOCALES?.[0];
 

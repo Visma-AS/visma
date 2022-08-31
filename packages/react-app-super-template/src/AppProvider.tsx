@@ -5,6 +5,7 @@ import { ReactKeycloakProvider } from '@visma/react-keycloak';
 import type { OpenAPIV3 } from 'openapi-types';
 import React, { Suspense } from 'react';
 import keycloak from './keycloak.js';
+import SetDocumentLang from './SetDocumentLang';
 import useSetBackendBaseURL from './useSetBackendBaseURL.js';
 
 interface Props {
@@ -37,7 +38,10 @@ export default function AppProvider(props: Props) {
     <Suspense fallback={fallback}>
       <ReactKeycloakProvider {...reactKeycloakProviderProps}>
         <Suspense fallback={fallback}>
-          <IntlProvider {...intlProviderProps}>{children}</IntlProvider>
+          <IntlProvider {...intlProviderProps}>
+            <SetDocumentLang />
+            {children}
+          </IntlProvider>
         </Suspense>
       </ReactKeycloakProvider>
     </Suspense>

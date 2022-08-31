@@ -6,7 +6,9 @@ import * as url from 'url';
 import type { Plugin } from 'vite';
 import target from './target.js';
 
-const availableMessageFiles = fs.readdirSync(target);
+const availableMessageFiles = fs.pathExistsSync(target)
+  ? fs.readdirSync(target)
+  : [];
 
 const reactIntlBundledMessagesPlugin = createPlugin(
   '@visma/vite-plugin-react-intl-bundled-messages',

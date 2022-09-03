@@ -1,3 +1,7 @@
+# 1.2.0
+
+- Upgrade to `react-intl@^5.20.10 || ^6.0.0`
+
 # 1.1.1
 
 - Fix Vite build if `.compiled-lang` path is not available

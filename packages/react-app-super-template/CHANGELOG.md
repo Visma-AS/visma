@@ -1,3 +1,7 @@
+# 1.4.0
+
+- Upgrade to `react-intl@^5.20.10 || ^6.0.0`
+
 # 1.3.0
 
 - Remove dependency `npm-run-all`

@@ -16,3 +16,7 @@ Shared base TSConfigs.
   "include": ["src/"]
 }
 ```
+
+### TS Patch
+
+With `@visma/tsconfig/react-library.json` you must also use [TS Patch](https://www.npmjs.com/package/ts-patch).

@@ -12,7 +12,7 @@
         "import": "transform",
         "type": "config",
         "overrideIdFn": "[sha512:contenthash:base64:6]",
-        "_removeDefaultMessage": true,
+        "removeDefaultMessage": true,
         "ast": true
       }
     ],

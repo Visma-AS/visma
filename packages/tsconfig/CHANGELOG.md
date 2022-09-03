@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Set `@formatjs/ts-transformer` `removeDefaultMessage` to `true` in `react-library.json`
+
 # 1.1.0
 
 - Add `@formatjs/ts-transformer` to `react-library.json`

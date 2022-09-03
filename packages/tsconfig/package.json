@@ -1,6 +1,6 @@
 {
   "name": "@visma/tsconfig",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Shared base TSConfigs.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/tsconfig",
   "repository": {

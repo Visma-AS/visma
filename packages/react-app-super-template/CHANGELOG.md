@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Remove dependency `npm-run-all`
+
 # 1.2.0
 
 - Update `document.lang` on locale change

@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Use `@formatjs/icu-messageformat-parser/no-parser` in production
+
 # 1.2.0
 
 - Upgrade to `react-intl@^5.20.10 || ^6.0.0`

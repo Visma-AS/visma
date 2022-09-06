@@ -10,20 +10,48 @@ const availableMessageFiles = fs.pathExistsSync(target)
   ? fs.readdirSync(target)
   : [];
 
-const reactIntlBundledMessagesPlugin = createPlugin(
+export const defaultOptions = {
+  noParser: true,
+};
+
+interface Options {
+  noParser?: boolean;
+}
+
+const mainPlugin = createPlugin(
   '@visma/vite-plugin-react-intl-bundled-messages',
   'dynamic-import-messages',
   `export default {
-  ${(globalThis.ENV?.LOCALES ?? [])
-    .map((locale) => [locale, `${locale}.json`])
-    .filter(([_locale, fileName]) => availableMessageFiles.includes(fileName!))
-    .map(
-      ([locale, fileName]) =>
-        `  "${locale}": () => import("${path.resolve(target)}/${fileName}"),
-  `
-    )
-    .join('')}}`
+${(globalThis.ENV?.LOCALES ?? [])
+  .map((locale) => [locale, `${locale}.json`])
+  .filter(([_locale, fileName]) => availableMessageFiles.includes(fileName!))
+  .map(
+    ([locale, fileName]) =>
+      `  "${locale}": () => import("${path.resolve(target)}/${fileName}"),
+`
+  )
+  .join('')}}`
 );
+
+const noParserPlugin: Plugin = {
+  name: '@visma/vite-plugin-icu-messageformat-no-parser',
+  config: (_config, { mode }) => ({
+    resolve: {
+      alias: {
+        ...(mode === 'production' && {
+          '@formatjs/icu-messageformat-parser':
+            '@formatjs/icu-messageformat-parser/no-parser',
+        }),
+      },
+    },
+  }),
+};
+
+const reactIntlBundledMessagesPlugin = (options?: Options) =>
+  [
+    mainPlugin,
+    (options?.noParser ?? defaultOptions.noParser) && noParserPlugin,
+  ].filter(Boolean);
 
 export default reactIntlBundledMessagesPlugin;
 

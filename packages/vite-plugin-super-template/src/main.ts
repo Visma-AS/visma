@@ -1,5 +1,7 @@
 import dateFnsLocaleVitePlugin from '@visma/react-app-locale-utils/lib/dateFnsLocaleVitePlugin.js';
-import reactIntlBundledMessagesPlugin from '@visma/react-intl-bundled-messages/lib/vitePlugin.js';
+import reactIntlBundledMessagesPlugin, {
+  defaultOptions as reactIntlBundledMessages,
+} from '@visma/react-intl-bundled-messages/lib/vitePlugin.js';
 import react from '@vitejs/plugin-react';
 import dynamicImport from 'vite-plugin-dynamic-import';
 import envCompatible from 'vite-plugin-env-compatible';
@@ -20,12 +22,16 @@ export const defaultOptions = {
       plugins: ['codegen'],
     },
   },
+  reactIntlBundledMessages,
 };
 
 interface Options {
   dynamicImport?: Parameters<typeof dynamicImport>[0];
   envCompatible?: Parameters<typeof envCompatible>[0];
   react?: Parameters<typeof react>[0];
+  reactIntlBundledMessages?: Parameters<
+    typeof reactIntlBundledMessagesPlugin
+  >[0];
 }
 
 export default function superTemplate(options?: Options) {
@@ -40,7 +46,7 @@ export default function superTemplate(options?: Options) {
     gitInfoPlugin,
     projectAliasPlugin,
     react(options?.react ?? defaultOptions.react),
-    reactIntlBundledMessagesPlugin,
+    reactIntlBundledMessagesPlugin(options?.reactIntlBundledMessages),
     tsconfigPaths(),
   ];
 }

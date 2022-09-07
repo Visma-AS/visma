@@ -1,3 +1,7 @@
+# x.y.z
+
+- Remove unnecessary dependency `lodash`
+
 # 1.4.0
 
 - Upgrade to `react-intl@^5.20.10 || ^6.0.0`

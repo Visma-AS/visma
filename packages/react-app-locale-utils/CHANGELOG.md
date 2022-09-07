@@ -1,3 +1,7 @@
+# x.y.z
+
+- Remove unnecessary dependency `lodash`
+
 # 1.1.1
 
 - Fix Vite build if `date-fns` is not available

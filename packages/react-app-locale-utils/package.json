@@ -34,8 +34,7 @@
     "@postinumero/use-async": "^0.3.0",
     "dotenv": "^10.0.0",
     "fast-glob": "^3.2.7",
-    "fs-extra": "^10.1.0",
-    "lodash": "^4.17.21"
+    "fs-extra": "^10.1.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.4.1",

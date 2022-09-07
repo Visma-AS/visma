@@ -9,6 +9,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import craLikePlugin from './craLikePlugin.js';
 import defaultExport from './defaultExport.js';
 import dynamicBase from './dynamicBase.js';
+import faviconsPlugin, {
+  defaultOptions as favicons,
+} from './faviconsPlugin.js';
 import gitInfoPlugin from './gitInfoPlugin.js';
 import projectAliasPlugin from './projectAliasPlugin.js';
 
@@ -16,6 +19,7 @@ export const defaultOptions = {
   envCompatible: {
     prefix: 'REACT_APP_',
   },
+  favicons,
   react: {
     babel: {
       presets: ['@visma/formatjs'],
@@ -28,6 +32,7 @@ export const defaultOptions = {
 interface Options {
   dynamicImport?: Parameters<typeof dynamicImport>[0];
   envCompatible?: Parameters<typeof envCompatible>[0];
+  favicons?: Parameters<typeof faviconsPlugin>[0];
   react?: Parameters<typeof react>[0];
   reactIntlBundledMessages?: Parameters<
     typeof reactIntlBundledMessagesPlugin
@@ -43,6 +48,7 @@ export default function superTemplate(options?: Options) {
     defaultExport(envCompatible)(
       options?.envCompatible ?? defaultOptions.envCompatible
     ),
+    faviconsPlugin(options?.favicons),
     gitInfoPlugin,
     projectAliasPlugin,
     react(options?.react ?? defaultOptions.react),

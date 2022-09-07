@@ -1,3 +1,7 @@
+# 0.1.6
+
+- Add `vite-plugin-favicons-inject`
+
 # 0.1.5
 
 - Upgrade to `@visma/react-intl-bundled-messages@^1.3.0`

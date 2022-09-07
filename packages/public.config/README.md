@@ -36,19 +36,19 @@ window.ENV = ${JSON.stringify(data)};
 );
 ```
 
-The browser should receive something like from the server:
+The browser should receive something like this from the server:
 
 ```html
 ...
-<body>
-  <div id="root"></div>
+<head>
+  ...
   <script>
     window.ENV = {
       HELLO: 'world',
     };
   </script>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+  ...
+</head>
 ...
 ```
 

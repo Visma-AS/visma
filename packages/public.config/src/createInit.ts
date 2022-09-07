@@ -1,4 +1,5 @@
 import * as merge from 'deepmerge-json';
+import { set } from 'lodash-es';
 
 const objectMap = <FromValue, ToValue>(
   obj: { [key: string]: FromValue },
@@ -80,6 +81,12 @@ const jsonParseSafe = ([
 
 const currentHostnameSafe = hostnameSafe(globalThis.location?.hostname ?? '');
 
+const unflat = (config: Config) =>
+  Object.entries(config).reduce(
+    (config, [key, value]) => set(config, key, value),
+    {}
+  );
+
 export default function createInit(configs: ConfigOption[]) {
   return function init(options?: Options) {
     const prefixes = toArray(options?.prefix ?? defaultOptions.prefix);
@@ -100,6 +107,7 @@ export default function createInit(configs: ConfigOption[]) {
       .flatMap(overrides)
       .filter(matchCurrentHostname)
       .map(config)
+      .map(unflat)
       .reduce(
         (config, overrides) =>
           (typeof merge === 'function' ? merge : merge.default)(

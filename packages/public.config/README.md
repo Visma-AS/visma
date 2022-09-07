@@ -70,6 +70,22 @@ const App = (await import(/* webpackMode: "eager" */ './App')).default;
 > const url = process.env.PUBLIC_URL + '/config/${hostname}.json';
 > ```
 
+## Unflat keys
+
+```
+VITE_HELLO.WORLD=123
+```
+
+`globalThis.ENV`:
+
+```json
+{
+  "HELLO": {
+    "WORLD": 123
+  }
+}
+```
+
 ## JSON values
 
 Valid JSON values are parsed. Escape value using `'"something"'` to avoid incorrect type conversion. Example:
@@ -91,7 +107,9 @@ VITE_STRING=foo
   "BOOLEAN_STRING": "true",
   "NUMBER": 123,
   "NUMBER_STRING": "123",
-  "OBJ": { "hello": "world" },
+  "OBJ": {
+    "hello": "world"
+  },
   "STRING": "foo"
 }
 ```

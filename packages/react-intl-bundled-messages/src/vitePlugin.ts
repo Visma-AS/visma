@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import * as path from 'node:path';
 import * as url from 'url';
 import type { Plugin } from 'vite';
+import { normalizePath } from 'vite';
 import target from './target.js';
 
 const availableMessageFiles = fs.pathExistsSync(target)
@@ -27,7 +28,9 @@ ${(globalThis.ENV?.LOCALES ?? [])
   .filter(([_locale, fileName]) => availableMessageFiles.includes(fileName!))
   .map(
     ([locale, fileName]) =>
-      `  "${locale}": () => import("${path.resolve(target)}/${fileName}"),
+      `  "${locale}": () => import("${normalizePath(
+        path.resolve(target)
+      )}/${fileName}"),
 `
   )
   .join('')}}`

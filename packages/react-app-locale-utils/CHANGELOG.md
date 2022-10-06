@@ -1,5 +1,6 @@
-# x.y.z
+# 1.1.2
 
+- Fix dynamic import path in Windows
 - Remove unnecessary dependency `lodash`
 
 # 1.1.1

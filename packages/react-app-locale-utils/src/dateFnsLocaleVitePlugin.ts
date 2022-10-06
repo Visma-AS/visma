@@ -6,12 +6,15 @@ import { createRequire } from 'node:module';
 import * as path from 'node:path';
 import * as url from 'url';
 import type { Plugin } from 'vite';
+import { normalizePath } from 'vite';
 
 const require = createRequire(import.meta.url);
 
 function getAvailableLocales() {
   try {
-    const localeDir = path.dirname(require.resolve('date-fns/locale'));
+    const localeDir = normalizePath(
+      path.dirname(require.resolve('date-fns/locale'))
+    );
     return fg
       .sync(`${localeDir}/*`, { onlyDirectories: true })
       .map((localePath) => path.basename(localePath));

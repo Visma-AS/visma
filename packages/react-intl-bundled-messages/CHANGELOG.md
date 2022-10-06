@@ -1,3 +1,7 @@
+# 1.3.1
+
+- Fix dynamic import path in Windows
+
 # 1.3.0
 
 - Use `@formatjs/icu-messageformat-parser/no-parser` in production

@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Upgrade to `keycloak-js@^19.0.3`
+
 # 1.0.0
 
 - **Breaking:** Upgrade to `@visma/public.config@1.0.0`

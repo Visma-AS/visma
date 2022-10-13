@@ -1,5 +1,7 @@
-# x.y.z
+# 1.4.1
 
+- Upgrade to `@visma/react-keycloak@^1.1.0`
+- Update types
 - Remove unnecessary dependency `lodash`
 
 # 1.4.0

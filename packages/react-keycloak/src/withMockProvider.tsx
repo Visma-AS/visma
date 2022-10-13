@@ -1,5 +1,6 @@
 import { reactKeycloakWebContext } from '@react-keycloak/web/lib/context';
-import { KeycloakInstance, KeycloakLogoutOptions } from 'keycloak-js';
+import type Keycloak from 'keycloak-js';
+import type { KeycloakLogoutOptions } from 'keycloak-js';
 import React, { useEffect, useReducer, useState } from 'react';
 import type { Props, Provider } from './index.js';
 
@@ -36,8 +37,9 @@ export default globalThis.ENV?.KEYCLOAK_MOCK_USER
             setAuthenticated(true);
             onTokens!({
               token:
+                mockUser.__tokens?.token ??
                 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
-              refreshToken: '<refreshToken>',
+              refreshToken: mockUser.__tokens?.refreshToken ?? '<refreshToken>',
             });
             forceUpdate();
           },
@@ -70,7 +72,7 @@ export default globalThis.ENV?.KEYCLOAK_MOCK_USER
         const authClient = useAuthClientMock({
           user: mockUser,
           onTokens,
-        }) as KeycloakInstance;
+        }) as Keycloak;
         useEffect(() => {
           setTimeout(() => {
             onTokens({ token, refreshToken });

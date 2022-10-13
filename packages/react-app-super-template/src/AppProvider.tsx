@@ -2,20 +2,23 @@ import { clientPromise } from '@/api';
 import definition from '@/api/schema.json';
 import { IntlProvider } from '@visma/react-intl-bundled-messages';
 import { ReactKeycloakProvider } from '@visma/react-keycloak';
+import type Keycloak from 'keycloak-js';
 import type { OpenAPIV3 } from 'openapi-types';
 import React, { Suspense } from 'react';
 import keycloak from './keycloak.js';
 import SetDocumentLang from './SetDocumentLang';
 import useSetBackendBaseURL from './useSetBackendBaseURL.js';
 
+type ReactKeycloakProvider = React.ComponentProps<typeof ReactKeycloakProvider>;
+
 interface Props {
   apiSchema?: OpenAPIV3.Document;
-  authClient?: Keycloak.KeycloakInstance;
+  authClient?: Keycloak;
   backend?: { baseURL?: string };
   children?: React.ReactNode;
   fallback?: JSX.Element | null;
   intlProviderProps?: Parameters<typeof IntlProvider>[0];
-  reactKeycloakProviderProps?: Parameters<typeof ReactKeycloakProvider>[0];
+  reactKeycloakProviderProps?: Partial<ReactKeycloakProvider>;
 }
 
 export default function AppProvider(props: Props) {
@@ -24,9 +27,7 @@ export default function AppProvider(props: Props) {
   const children = props.children ?? null;
   const fallback = props.fallback ?? null;
   const intlProviderProps = props.intlProviderProps;
-  const reactKeycloakProviderProps =
-    props.reactKeycloakProviderProps ??
-    ({} as Parameters<typeof ReactKeycloakProvider>[0]);
+  const reactKeycloakProviderProps = props.reactKeycloakProviderProps ?? {};
   reactKeycloakProviderProps.authClient ??= keycloak;
   reactKeycloakProviderProps.axios ??= clientPromise;
   reactKeycloakProviderProps.LoadingComponent ??= props.fallback ?? undefined;
@@ -36,7 +37,9 @@ export default function AppProvider(props: Props) {
 
   return (
     <Suspense fallback={fallback}>
-      <ReactKeycloakProvider {...reactKeycloakProviderProps}>
+      <ReactKeycloakProvider
+        {...(reactKeycloakProviderProps as ReactKeycloakProvider)}
+      >
         <Suspense fallback={fallback}>
           <IntlProvider {...intlProviderProps}>
             <SetDocumentLang />

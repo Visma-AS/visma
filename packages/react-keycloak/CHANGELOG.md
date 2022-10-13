@@ -1,3 +1,9 @@
+# 1.2.0
+
+- If set, use JWTs from `KEYCLOAK_MOCK_USER.__tokens`
+- Update types
+- Include `src` files for source maps
+
 # 1.1.0
 
 - Upgrade to `keycloak-js@^19.0.3`

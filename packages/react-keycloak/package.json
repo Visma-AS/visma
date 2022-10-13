@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-keycloak",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Keycloak helper components, hooks, etc.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-keycloak",
   "repository": {
@@ -21,7 +21,8 @@
   },
   "main": "./lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "build": "tsc",

@@ -1,6 +1,6 @@
 import useLocalStorageJson from '@postinumero/storage/lib/useLocalStorageJson.js';
 import jwt_decode from 'jwt-decode';
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Props, Provider } from '../index.js';
 import withLocalStorageKeyContext, {
   useLocalStorageKey,
@@ -16,7 +16,7 @@ export default function withPageRefreshSupport(Provider: Provider) {
   return withLocalStorageKeyContext(function ReactKeycloakProvider(
     props: Props
   ): Provider {
-    const { authClient, onTokens, ...other } = props;
+    const { onTokens, ...other } = props;
     const [initialized, setInitialized] = useState(false);
     const [storedTokens, setStoredTokens] = useLocalStorageJson(
       useLocalStorageKey()
@@ -41,7 +41,6 @@ export default function withPageRefreshSupport(Provider: Provider) {
 
     return (
       <Provider
-        authClient={authClient}
         initOptions={{
           ...initOptions,
           ...tokens,
@@ -57,7 +56,7 @@ export default function withPageRefreshSupport(Provider: Provider) {
         }}
         {...other}
       >
-        {initialized && (other as { children: ReactNode }).children}
+        {initialized && other.children}
       </Provider>
     ) as unknown as Provider;
   } as unknown as Provider);

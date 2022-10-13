@@ -1,6 +1,6 @@
 {
   "name": "@visma/vite-plugin-super-template",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vite plugin for super-template.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/vite-plugin-super-template",
   "repository": {

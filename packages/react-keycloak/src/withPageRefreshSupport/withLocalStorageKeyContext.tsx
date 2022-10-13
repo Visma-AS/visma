@@ -12,11 +12,11 @@ export const useLocalStorageKey = () => useContext(Context);
 
 export default function withLocalStorageKeyContext(Provider: Provider) {
   return function ReactKeycloakProvider(props: PropsWithLocalStorageKey) {
-    const { authClient, localStorageKey = 'keycloak_tokens', ...other } = props;
+    const { localStorageKey = 'keycloak_tokens', ...other } = props;
 
     return (
       <Context.Provider value={localStorageKey}>
-        <Provider authClient={authClient} {...other} />
+        <Provider {...other} />
       </Context.Provider>
     );
   };

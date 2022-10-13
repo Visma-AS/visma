@@ -13,6 +13,7 @@ import faviconsPlugin, {
   defaultOptions as favicons,
 } from './faviconsPlugin.js';
 import gitInfoPlugin from './gitInfoPlugin.js';
+import optimizeOpenAPIPatchPlugin from './optimizeOpenAPIPatchPlugin.js';
 import projectAliasPlugin from './projectAliasPlugin.js';
 
 export const defaultOptions = {
@@ -50,6 +51,7 @@ export default function superTemplate(options?: Options) {
     ),
     faviconsPlugin(options?.favicons),
     gitInfoPlugin,
+    optimizeOpenAPIPatchPlugin,
     projectAliasPlugin,
     react(options?.react ?? defaultOptions.react),
     reactIntlBundledMessagesPlugin(options?.reactIntlBundledMessages),

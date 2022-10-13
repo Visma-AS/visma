@@ -1,6 +1,7 @@
 import type { AuthProviderProps } from '@react-keycloak/core';
 import { ReactKeycloakProvider } from '@react-keycloak/web';
-import type { KeycloakInstance } from 'keycloak-js';
+import type Keycloak from 'keycloak-js';
+import React from 'react';
 
 export { default as HasRole } from './helpers/HasRole.js';
 export { default as IsAuthenticated } from './helpers/IsAuthenticated.js';
@@ -14,4 +15,4 @@ export { default as withMockProvider } from './withMockProvider.js';
 export { default as withPageRefreshSupport } from './withPageRefreshSupport/index.js';
 
 export type Provider = typeof ReactKeycloakProvider;
-export type Props = AuthProviderProps<KeycloakInstance>;
+export type Props = React.PropsWithChildren<AuthProviderProps<Keycloak>>;

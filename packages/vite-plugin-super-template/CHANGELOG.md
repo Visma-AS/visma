@@ -1,3 +1,7 @@
+# 0.1.7
+
+- Add `@visma/vite-plugin-super-template-optimize-openapi-patch` (internal)
+
 # 0.1.6
 
 - Add `vite-plugin-favicons-inject`

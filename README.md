@@ -58,7 +58,7 @@ Contributions are welcome!
 
 ## Package guidelines
 
-- Make sure there is not already a package for the same purpose. Really, there area packages for almost everything on npm.
+- Make sure there is not already a package for the same purpose. Really, there are packages for almost everything on npm.
 - Keep the number of features small. A small package is more composable and usually has more real world use cases, then a package that does multiple things.
 
   > Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.

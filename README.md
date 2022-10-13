@@ -85,7 +85,16 @@ Follow [SemVer](https://semver.org/). Also, it is recommended:
 - `0.1.0` to be the **first release**
 - For the first year keep versions in the `0.y.z` range, where **y**: breaking changes, **z**: other changes
 - Release `1.0.0` 1 year after the first release, regardless of the change. This ensures the public API has time to be defined, and the package won't stay years in the initial development phase.
-- For breaking changes use [React’s approach](https://reactjs.org/blog/2016/02/19/new-versioning-scheme.html#breaking-changes)
+- For breaking changes use [React’s approach](https://reactjs.org/blog/2016/02/19/new-versioning-scheme.html#breaking-changes). In short:
+  1. In a **minor** version update:
+     - Introduce new APIs and breaking changes using a different name, example `next_someFunction`
+     - Deprecate `someFunction`
+  2. In a **major** version update:
+     - Rename `next_someFunction` to `someFunction` (keep `next_someFunction` available too)
+     - Deprecate `next_someFunction`
+  - Benefits:
+    - Functionality can be changed within one major version bump 👍
+    - Users can always upgrade to the next major version, if they have first upgraded to latest minor version and are not using deprecated APIs 👍
 
 ### Readme
 

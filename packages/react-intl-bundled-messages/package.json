@@ -1,6 +1,6 @@
 {
   "name": "@visma/react-intl-bundled-messages",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "`IntlProvider` that lazy loads messages in current language in Webpack environment.",
   "homepage": "https://github.com/Visma-AS/visma/tree/main/packages/react-intl-bundled-messages",
   "repository": {

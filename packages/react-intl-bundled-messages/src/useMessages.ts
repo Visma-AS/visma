@@ -19,7 +19,7 @@ export default function useMessages({
   const [, messages] = useLocaleMessagesSafe(locale);
 
   return {
-    ...defaultMessages,
-    ...messages,
+    ...(defaultMessages?.default ?? defaultMessages),
+    ...(messages?.default ?? messages),
   };
 }

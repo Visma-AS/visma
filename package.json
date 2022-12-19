@@ -8,20 +8,25 @@
     "packages/*/examples/*"
   ],
   "scripts": {
-    "build": "build-npm-workspace",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
     "prepare": "husky install",
-    "test": "npm test --workspaces --if-present"
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish",
+    "test": "turbo run test"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
     "**/package.json": "sort-package-json"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "@visma/build-npm-workspace": "^0.1.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
-    "sort-package-json": "^1.50.0"
+    "sort-package-json": "^1.50.0",
+    "turbo": "^1.6.3"
   },
   "engines": {
     "node": ">=16.0.0",

@@ -20,7 +20,7 @@ Contributions are welcome!
 
 ### Tools
 
-- [@visma/build-npm-workspace](/packages/build-npm-workspace) – Build npm workspace packages in the correct order of internal dependency graph
+- ~[@visma/build-npm-workspace](/packages/build-npm-workspace) – Build npm workspace packages in the correct order of internal dependency graph~ (deprecated)
 - [@visma/christmas-elf-name-generator](/packages/christmas-elf-name-generator) – With this high-level neural network -assisted [Christmas Elf Name Generator](https://visma-as.github.io/visma/christmas-elf-name-generator/), you can now generate your own custom elf name just in time for Christmas!
 - [@visma/formatjs-scripts](/packages/formatjs-scripts) – Extract and compile messages, scan `node_modules` for messages
 - [@visma/generator-visma](/packages/generator-visma) – [Yeoman](https://yeoman.io) npm package generator for this repository
@@ -53,8 +53,8 @@ Contributions are welcome!
    npx yo @visma/visma
    ```
 
-3. If the package has files to be deployed to GitHub Pages, add paths to [actions.yml](.github/workflows/actions.yml#L62-L64)
-4. When you are ready to publish, create a pull request. CI will publish a new version from the main branch if the version changes.
+3. If the package has files to be deployed to GitHub Pages, add paths to [ci.yml](.github/workflows/ci.yml#L45)
+4. When you are ready to publish, run `npx changeset` and follow the instructions, then create a pull request. CI will publish a new version from the main branch according to the changeset.
 
 ## Package guidelines
 

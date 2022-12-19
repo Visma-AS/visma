@@ -23,6 +23,10 @@
 - **Breaking:** Switch to Vite. Remove support of `useMessages` in CRACO.
 - Upgrade to `@visma/react-app-locale-utils@^1.0.0`
 
+# 0.1.6
+
+- If available, read messages from `.default` property
+
 # 0.1.5
 
 - Add CommonJS exports
